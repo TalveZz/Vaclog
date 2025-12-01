@@ -127,7 +127,7 @@ function atualizarItemAtivo(novoIndex) {
 
 function navegarParaVacina(vacina) {
   if (!vacina) return;
-  const url = `vacina-${encodeURIComponent(vacina.slug)}.html`;
+  const url = `${encodeURIComponent(vacina.slug)}.html`;
   console.log("Navegando para:", url);
   window.location.href = url;
 }
