@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vaclog – Catálogo de Vacinas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Vaclog: catálogo claro e acessível de vacinas para famílias, com linguagem simples e foco em benefícios e riscos." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a href="#conteudo-principal" class="skip-link">Ir direto para o conteúdo</a>
+
+  <header role="banner">
+    <div class="header-inner">
+      <div class="logo" aria-label="Vaclog, catálogo de vacinas">
+        Vaclog
+      </div>
+      <nav aria-label="Navegação principal">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#catalogo">Catálogo de vacinas</a></li>
+          <li><a href="#como-funcionam">Como funcionam</a></li>
+          <li><a href="#linha-do-tempo">Linha do tempo</a></li>
+          <li><a href="#sobre">Sobre o Vaclog</a></li>
+          <li><a href="#acessibilidade">Acessibilidade</a></li>
+          <li><a href="#ajuda">Ajuda/Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo-principal" role="main">
+    <section id="home" class="hero" aria-labelledby="titulo-home">
+      <h1 id="titulo-home">Vaclog: catálogo claro e confiável sobre vacinas</h1>
+      <p>Ajuda você e sua família a entender, com calma, por que as vacinas existem, quais são seus benefícios e quais riscos podem trazer, sem alarmismo nem promessas exageradas.[web:30]</p>
+      <p class="text-muted">Informação em linguagem simples, para adolescentes, adultos e crianças alfabetizadas.</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" type="button" onclick="document.getElementById('catalogo').scrollIntoView({behavior:'smooth'})">
+          Explorar catálogo de vacinas
+        </button>
+        <button class="btn btn-secondary" type="button" onclick="document.getElementById('como-funcionam').scrollIntoView({behavior:'smooth'})">
+          Como funcionam as vacinas?
+        </button>
+      </div>
+      <p class="hero-micro">
+        Sem julgamento, sem pressão. Só informação clara para você decidir junto com profissionais de saúde.
+      </p>
+    </section>
+
+    <section id="catalogo" class="section" aria-labelledby="sec-busca">
+      <h2 id="sec-busca">Procure uma vacina</h2>
+      <p>Busque pelo nome da vacina ou pelo nome da doença.</p>
+      <div class="card search-grid">
+        <div class="search-box">
+          <label for="campo-busca">Buscar vacina ou doença</label>
+          <div class="search-input-wrap">
+            <input
+              id="campo-busca"
+              type="search"
+              name="q"
+              placeholder="Ex.: dengue, gripe, HPV…"
+              autocomplete="off"
+              role="combobox"
+              aria-autocomplete="list"
+              aria-expanded="false"
+              aria-controls="lista-sugestoes"
+              aria-haspopup="listbox"
+            />
+            <button id="botao-busca" class="btn btn-primary" type="button">Buscar</button>
+          </div>
+
+          <ul
+            id="lista-sugestoes"
+            role="listbox"
+            aria-label="Sugestões de vacinas"
+            class="suggestions"
+          ></ul>
+          <p id="status-busca" class="sr-only" aria-live="polite"></p>
+
+          <p class="search-help">
+            Não achou o que procura? Tente buscar pelo nome da doença ou converse com um profissional de saúde.
+          </p>
+        </div>
+        <div>
+          <p class="filters-title">Categorias rápidas</p>
+          <div class="filters" aria-label="Filtros de categoria">
+            <div>
+              <label>Por doença</label>
+              <div class="chips">
+                <span class="chip">Dengue</span>
+                <span class="chip">Gripe</span>
+                <span class="chip">HPV</span>
+                <span class="chip">Sarampo</span>
+              </div>
+            </div>
+            <div>
+              <label>Por faixa etária</label>
+              <div class="chips">
+                <span class="chip">Bebês</span>
+                <span class="chip">Crianças</span>
+                <span class="chip">Adolescentes</span>
+                <span class="chip">Adultos</span>
+                <span class="chip">Idosos</span>
+              </div>
+            </div>
+            <div>
+              <label>Por situação</label>
+              <div class="chips">
+                <span class="chip">Rotina</span>
+                <span class="chip">Viagem</span>
+                <span class="chip">Surtos</span>
+                <span class="chip">Grupos especiais</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="sec-como-usar">
+      <h2 id="sec-como-usar">Como usar o Vaclog</h2>
+      <div class="card">
+        <ol>
+          <li>Use a busca ou as categorias para encontrar a vacina ou doença que você quer entender.</li>
+          <li>Na página da vacina, leia primeiro o bloco “Em poucas palavras”.</li>
+          <li>Use os botões “Ver versão resumida” ou “Ver versão detalhada” para escolher o nível de explicação.</li>
+          <li>Anote suas dúvidas e converse com um profissional de saúde antes de decidir.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="sec-o-que-e">
+      <h2 id="sec-o-que-e">O que é uma vacina?</h2>
+      <div class="card">
+        <p>Vacinas são produtos que treinam o sistema de defesa do corpo (sistema imunológico) para reconhecer um vírus ou bactéria e reagir mais rápido, sem causar a doença como na infecção natural.[web:16]</p>
+        <p>Elas ajudam a diminuir o risco de ficar doente, de ter formas graves e de transmitir para outras pessoas, especialmente em lugares com muitos casos daquela doença.[web:16]</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="sec-boatos">
+      <h2 id="sec-boatos">Por que existem boatos e medos?</h2>
+      <div class="card">
+        <p>Desde o começo do uso de vacinas, muitas pessoas ficaram com medo por não entender como elas funcionam ou por terem vivido campanhas mal explicadas ou muito autoritárias, o que gerou desconfiança.[web:30]</p>
+        <p>Hoje, mensagens falsas circulam rápido na internet, misturando verdades e boatos. O Vaclog existe para explicar, com calma, o que se sabe sobre benefícios e riscos.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="sec-aviso">
+      <h2 id="sec-aviso">Importante</h2>
+      <div class="card">
+        <p><strong>O Vaclog é um site informativo.</strong> Ele não substitui consulta médica.</p>
+        <p>Use estas informações para entender melhor o assunto e conversar com profissionais de saúde antes de tomar decisões.</p>
+      </div>
+    </section>
+
+    <section id="como-funcionam" class="section">
+      <h2>Como funcionam as vacinas?</h2>
+      <div class="card">
+        <p>O sistema imunológico é a defesa natural do corpo. Ele tenta identificar o que é perigoso, como vírus e bactérias, e impedir que esses invasores causem doença.[web:16]</p>
+        <p>A vacina mostra ao corpo uma versão enfraquecida, inativada ou apenas pedaços do vírus/bactéria, o suficiente para o sistema de defesa aprender a reconhecer.[web:11]</p>
+      </div>
+    </section>
+
+    <section id="linha-do-tempo" class="section">
+      <h2>Linha do tempo das vacinas no Brasil</h2>
+      <div class="card">
+        <p>No começo do século XX, o Brasil passou por campanhas de vacinação com pouca explicação e muita pressão, o que levou a episódios de resistência, como a chamada Revolta da Vacina.[web:30]</p>
+        <p>Hoje existem calendários de vacinação e campanhas que ajudaram a reduzir ou controlar várias doenças, apesar de a desinformação ainda ser um desafio.[web:16][web:30]</p>
+      </div>
+    </section>
+
+    <section id="acessibilidade" class="section">
+      <h2>Acessibilidade</h2>
+      <div class="card">
+        <p>O Vaclog foi pensado para ser acessível, com bom contraste entre texto e fundo, fontes legíveis e organização clara das informações.[web:23][web:24][web:54]</p>
+        <p>Ícones são sempre acompanhados de texto, os elementos seguem landmarks como header, nav, main e footer, e imagens importantes recebem texto alternativo para leitores de tela.[web:46][web:52][web:57]</p>
+      </div>
+    </section>
+
+    <section id="sobre" class="section">
+      <h2>Sobre o Vaclog</h2>
+      <div class="card">
+        <p>O Vaclog é um catálogo educativo de vacinas com linguagem simples, criado para ajudar pessoas leigas a entender benefícios e riscos de forma calma e transparente.</p>
+      </div>
+    </section>
+
+    <section id="ajuda" class="section">
+      <h2>Ajuda / Contato</h2>
+      <div class="card">
+        <p>Teve dificuldade de entender alguma parte ou acessibilidade que pode melhorar? Envie seu feedback para a equipe do Vaclog.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <p><strong>Aviso:</strong> o Vaclog é um site informativo e não substitui consulta médica.</p>
+      <p>Para decisões sobre sua saúde e de sua família, sempre converse com profissionais de saúde de confiança.</p>
+      <p>As informações são baseadas em diretrizes e materiais de instituições de saúde reconhecidas, revisadas e atualizadas periodicamente.[web:16][web:43][web:44]</p>
+    </div>
+  </footer>
+
+  <script src="search.js"></script>
+</body>
+</html>
