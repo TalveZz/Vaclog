@@ -9,7 +9,7 @@ const vaccines = [
   { nome: 'Febre amarela', slug: 'febre-amarela', arquivo: 'febre-amarela.html', cores: ['#F59E0B', '#D97706'] },
   { nome: 'COVID-19 - Vacina A', slug: 'covid19-vacina-a', arquivo: 'covid19-vacina-a.html', cores: ['#1E40AF', '#1E3A8A'] },
   { nome: 'COVID-19 - Vacina B', slug: 'covid19-vacina-b', arquivo: 'covid19-vacina-b.html', cores: ['#06B6D4', '#0891B2'] },
-  { nome: 'Variolaa', slug: 'variolaa', arquivo: 'variolaa.html', cores: ['#6366F1', '#4F46E5'] }
+   { nome: 'Varíola', slug: 'variola', arquivo: 'variola-variola.html', cores: ['#f97316', '#ea580c'] },
 ];
 
 // Funcao para encontrar vacina por nome (busca fuzzy)
