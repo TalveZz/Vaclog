@@ -1,0 +1,98 @@
+<!--  COMPROMISSOS PAGE -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Compromissos - Transparência Vacinal</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="logo"><a href="index.html">🏛️ Transparência Vacinal</a></div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Voltar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="page-container">
+    <section class="page-header">
+      <h1>📝 Compromissos com a População</h1>
+      <p>Rastreie o cumprimento das promessas do governo em relação à vacinação</p>
+    </section>
+    <div id="compromissos-list" class="page-content"></div>
+  </main>
+  <footer>
+    <p>🏛️ Portal de Transparência Vacinal</p>
+  </footer>
+  <script src="government-data.js"></script>
+  <script>
+    function renderCompromissos() {
+      const list = document.getElementById('compromissos-list');
+      list.innerHTML = governmentCommitments.map(c => `
+        <div class="detail-card">
+          <h3>${c.titulo}</h3>
+          <p>${c.descricao}</p>
+          <div class="progress-bar"><div class="progress-fill" style="width: ${c.progresso}%"></div></div>
+          <p class="stat">${c.progresso}% completo | ${c.responsavel}</p>
+        </div>
+      `).join('');
+    }
+    renderCompromissos();
+  </script>
+</body>
+</html>
+
+<!-- CAMPANHAS PAGE -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Campanhas - Transparência Vacinal</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="logo"><a href="index.html">🏛️ Transparência Vacinal</a></div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Voltar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="page-container">
+    <section class="page-header">
+      <h1>💺 Campanhas de Vacinação</h1>
+      <p>Conheça as campanhas ativas e seus benefícios</p>
+    </section>
+    <div id="campanhas-list" class="page-content"></div>
+  </main>
+  <footer>
+    <p>🏛️ Portal de Transparência Vacinal</p>
+  </footer>
+  <script src="government-data.js"></script>
+  <script>
+    function renderCampaigns() {
+      const list = document.getElementById('campanhas-list');
+      list.innerHTML = campaigns.map(c => `
+        <div class="detail-card">
+          <h3>${c.nome}</h3>
+          <p>${c.descricao}</p>
+          <p><strong>Público-alvo:</strong> ${c.alvo}</p>
+          <p><strong>Benefícios:</strong> ${c.beneficios}</p>
+          <p><strong>Eficácia:</strong> ${c.eficacia}</p>
+          <div class="progress-bar"><div class="progress-fill" style="width: ${c.cobertura}%"></div></div>
+          <p class="stat">Cobertura: ${c.cobertura}%</p>
+        </div>
+      `).join('');
+    }
+    renderCampaigns();
+  </script>
+</body>
+</html>
