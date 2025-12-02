@@ -1,133 +1,165 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Revolta da Vacina 1904 - Argumentos e Perspectivas Historicas" />
-  <meta name="theme-color" content="#dc2626" />
-  <title>Revolta da Vacina 1904 - Analise Historica</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="VACLOG - Portal Oficial de Informações sobre Vacinas e Campanhas de Saúde" />
+    <meta name="theme-color" content="#1e7f45" />
+    <title>VACLOG - Portal Oficial de Vacinas</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header role="banner">
-    <div class="header-inner">
-      <div class="logo" aria-label="Revolta da Vacina 1904">
-        Revolta da Vacina 1904 - Perspectiva do Povo
-      </div>
-      <button id="menu-toggle" class="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <nav aria-label="Navegacao principal" id="nav-menu" class="nav-menu">
-        <ul>
-          <li><a href="#">Inicio</a></li>
-          <li><a href="argumentos.html">Argumentos da Revolta</a></li>
-          <li><a href="contexto.html">Contexto Historico</a></li>
-          <li><a href="repressao.html">Repressao do Governo</a></li>
-          <li><a href="testemunhas.html">Testemunhas</a></li>
-          <li><a href="analise.html">Analise</a></li>
-                      <li><a href="pesquisa-vacinas.html">Pesquisa de Vacinas</a></li>
-        </ul>
-      </nav>
+    <!-- Skip to content for accessibility -->
+    <a href="#main" class="skip-link">Pular para conteúdo principal</a>
+
+    <!-- Government Banner -->
+    <div class="gov-banner" role="banner" aria-label="Informações do Governo Brasileiro">
+        <p>Governo da República Federativa do Brasil | Ministério da Saúde</p>
     </div>
-  </header>
 
-  <main>
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-content">
-        <h1>Revolta da Vacina 1904</h1>
-        <p>A luta do povo contra a imposicao de uma politica de saude publica arbitraria e violenta.</p>
-        <p class="subtitle">O governo federal forcou a vacinacao obrigatoria sem consentimento. Os cidadaos se organizaram para defender sua liberdade e direitos.</p>
-      </div>
-    </section>
-
-    <!-- Cards Grid -->
-    <section class="main-cards">
-      <!-- Argumentos Card -->
-      <a href="argumentos.html" class="card-link">
-        <div class="card card-argumentos">
-          <div class="card-title">Argumentos da Revolta</div>
-          <p>Por que o povo rejeitava a vacina forcada: falta de consentimento, metodos brutais, desconfianca no governo</p>
-          <div class="card-footer">Ver Argumentos</div>
+    <!-- Header -->
+    <header role="banner">
+        <div class="header-inner">
+            <div class="logo">
+                <svg width="50" height="50" viewBox="0 0 50 50" aria-hidden="true">
+                    <circle cx="25" cy="25" r="22" fill="#1e7f45" stroke="#fff" stroke-width="2"/>
+                    <path d="M20 26l5 5 10-10" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                </svg>
+                <span>VACLOG</span>
+            </div>
+            <nav role="navigation" aria-label="Menu principal">
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="catalogo.html">Catálogo de Vacinas</a></li>
+                    <li><a href="faq.html">Perguntas Frequentes</a></li>
+                    <li><a href="propostas.html">Propostas do Governo</a></li>
+                    <li><a href="compromissos.html">Nossos Compromissos</a></li>
+                </ul>
+            </nav>
         </div>
-      </a>
+    </header>
 
-      <!-- Contexto Card -->
-      <a href="contexto.html" class="card-link">
-        <div class="card card-contexto">
-          <div class="card-title">Contexto Historico</div>
-          <p>Rio de Janeiro 1904: epidemia, propaganda do governo, e a reacao popular contra a coercao estatal</p>
-          <div class="card-footer">Ver Contexto</div>
+    <main id="main">
+        <!-- Hero Section -->
+        <section class="hero" id="inicio">
+            <div class="hero-content">
+                <h1>VACLOG - Saúde Pública Transparente</h1>
+                <p>Informações oficiais e confiáveis sobre vacinação no Brasil</p>
+                <p class="subtitle">Bem-vindo ao portal oficial de informações sobre campanhas de vacinação e saúde pública. Aqui você encontra dados transparentes, científicos e atualizados sobre todas as vacinas disponíveis no Brasil.</p>
+            </div>
+        </section>
+
+        <!-- Popup Modal -->
+        <div id="welcomeModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
+            <div class="modal-content">
+                <button class="close-modal" aria-label="Fechar" onclick="document.getElementById('welcomeModal').style.display='none';">×</button>
+                <h2 id="modalTitle">Bem-vindo ao VACLOG!</h2>
+                <p>Este é o portal oficial do Governo Brasileiro para informações sobre vacinas. Navegue pelas seções para aprender sobre:</p>
+                <ul>
+                    <li>✓ Todas as vacinas disponíveis</li>
+                    <li>✓ Benefícios e segurança</li>
+                    <li>✓ Campanhas de vacinação</li>
+                    <li>✓ Resposta a dúvidas comuns</li>
+                </ul>
+                <button onclick="document.getElementById('welcomeModal').style.display='none';" class="btn-primary">Entendido</button>
+            </div>
         </div>
-      </a>
 
-      <!-- Repressao Card -->
-      <a href="repressao.html" class="card-link">
-        <div class="card card-repressao">
-          <div class="card-title">Repressao Governamental</div>
-          <p>Como o governo federal reprimiu a revolta: policia, militares, prisoes e violencia contra manifestantes</p>
-          <div class="card-footer">Ver Repressao</div>
+        <!-- Main Cards Grid -->
+        <section class="cards-grid">
+            <a href="catalogo.html" class="card card-vaccines">
+                <h3>📋 Catálogo de Vacinas</h3>
+                <p>Conheça todas as vacinas disponíveis no Brasil, seus benefícios e eficácia comprovada cientificamente.</p>
+            </a>
+
+            <a href="faq.html" class="card card-faq">
+                <h3>❓ Perguntas Frequentes</h3>
+                <p>Respostas baseadas em ciência a dúvidas comuns sobre vacinação, efeitos colaterais e segurança.</p>
+            </a>
+
+            <a href="propostas.html" class="card card-propostas">
+                <h3>📊 Propostas do Governo</h3>
+                <p>Conheça as políticas, estratégias e metas do governo para ampliar o acesso à vacinação.</p>
+            </a>
+
+            <a href="compromissos.html" class="card card-compromissos">
+                <h3>🤝 Nossos Compromissos</h3>
+                <p>Transparência total, acesso universal e combate à desinformação sobre vacinas.</p>
+            </a>
+        </section>
+
+        <!-- Info Section -->
+        <section class="info-section">
+            <div class="info-card">
+                <h2>Por que este portal existe?</h2>
+                <p>A vacinação é uma das maiores conquistas da medicina moderna. Para combater a desinformação e fortalecer a confiança pública, criamos este portal com informações 100% transparentes, baseadas em evidências científicas sólidas.</p>
+                
+                <h3>Nossos Objetivos:</h3>
+                <ul>
+                    <li><strong>Transparência:</strong> Dados abertos e acessíveis sobre todas as campanhas de vacinação</li>
+                    <li><strong>Educação:</strong> Informações científicas e confiáveis para todos os brasileiros</li>
+                    <li><strong>Acesso Universal:</strong> Garantir que todos possam acessar vacinas gratuitamente</li>
+                    <li><strong>Combate à Desinformação:</strong> Esclarecer mitos e dados imprecisos sobre vacinação</li>
+                </ul>
+
+                <h3>Saiba Mais:</h3>
+                <p>Use o menu de navegação acima para explorar as seções. Cada página contém informações detalhadas e links para fontes científicas confiáveis.</p>
+            </div>
+        </section>
+
+        <!-- Accessibility Info -->
+        <section class="accessibility-section">
+            <h2>Acessibilidade</h2>
+            <p>Este site foi desenvolvido seguindo padrões WCAG 2.1 para garantir acessibilidade máxima. Você pode:</p>
+            <ul>
+                <li>Usar o seu leitor de tela</li>
+                <li>Navegar apenas com teclado (Tab, Enter, Setas)</li>
+                <li>Aumentar o tamanho da fonte no navegador</li>
+                <li>Ativar contraste alto em seu sistema operacional</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="footer-inner">
+            <p><strong>VACLOG - Portal Oficial de Informações sobre Vacinas</strong></p>
+            <p>Governo Federal | Ministério da Saúde</p>
+            <p class="footer-note">Todos os dados apresentados neste portal são baseados em evidências científicas e atualizados regularmente.</p>
+            <p style="font-size: 0.9rem; margin-top: 1rem;">
+                <a href="#inicio">Voltar ao topo</a>
+            </p>
         </div>
-      </a>
+    </footer>
 
-      <!-- Testemunhas Card -->
-      <a href="testemunhas.html" class="card-link">
-        <div class="card card-testemunhas">
-          <div class="card-title">Testemunhas Oculares</div>
-          <p>Relatos de pessoas que vivenciaram a revolta e viram a violencia estatal em primeira mao</p>
-          <div class="card-footer">Ver Testemunhas</div>
-        </div>
-      </a>
-    </section>
+    <script>
+        // Show welcome modal on page load
+        window.addEventListener('load', function() {
+            const modal = document.getElementById('welcomeModal');
+            if (modal && !localStorage.getItem('vaclog-visited')) {
+                modal.style.display = 'block';
+                localStorage.setItem('vaclog-visited', 'true');
+            }
+        });
 
-    <!-- Info Section -->
-    <section class="info-section">
-      <div class="info-card">
-        <h2>Sobre este Portal</h2>
-        <p>Este portal apresenta uma analise historica da Revolta da Vacina de 1904, documentando os argumentos populares, o contexto politico da epoca, e como o governo respondeu com repressao.</p>
-        <p>Este e um exercicio educacional sobre como movimentos sociais foram interpretados de diferentes maneiras ao longo da historia.</p>
-        <ul>
-          <li>Compreender os argumentos e preocupacoes reais do povo em 1904</li>
-          <li>Analisar como a imposicao estatal foi percebida como arbitraria</li>
-          <li>Documentar a resposta repressiva do governo</li>
-          <li>Refletir sobre direitos individuais vs politicas de saude publica</li>
-        </ul>
-      </div>
-    </section>
-  </main>
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(event) {
+            const modal = document.getElementById('welcomeModal');
+            if (event.key === 'Escape' && modal.style.display === 'block') {
+                modal.style.display = 'none';
+            }
+        });
 
-  <!-- Footer -->
-  <footer role="contentinfo">
-    <div class="footer-inner">
-      <p><strong>Portal Historico - Revolta da Vacina 1904</strong></p>
-      <p>Analise educacional dos eventos e perspectivas historicas</p>
-      <p class="footer-note" style="font-size: 0.9rem; margin-top: 1rem;">
-        Nota: Este portal apresenta a perspectiva historica de quem se opunha a vacinacao forcada em 1904. 
-        E importante notar que a ciencia moderna validou a importancia das vacinas para saude publica.
-      </p>
-    </div>
-  </footer>
-
-  <script>
-    // Menu Toggle
-    const menuToggle = document.getElementById('menu-toggle');
-    const navMenu = document.getElementById('nav-menu');
-    
-    menuToggle.addEventListener('click', function() {
-      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-      menuToggle.setAttribute('aria-expanded', !isExpanded);
-      navMenu.classList.toggle('active');
-    });
-    
-    const navLinks = navMenu.querySelectorAll('a');
-    navLinks.forEach(link => {
-      link.addEventListener('click', function() {
-        menuToggle.setAttribute('aria-expanded', 'false');
-        navMenu.classList.remove('active');
-      });
-    });
-  </script>
+        // Keyboard navigation for accessibility
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Tab') {
+                document.body.classList.add('keyboard-nav');
+            }
+        });
+        
+        document.addEventListener('mousedown', function() {
+            document.body.classList.remove('keyboard-nav');
+        });
+    </script>
 </body>
 </html>
