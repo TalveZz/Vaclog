@@ -9,15 +9,12 @@
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <!-- Skip to content for accessibility -->
     <a href="#main" class="skip-link">Pular para conteúdo principal</a>
 
-    <!-- Government Banner -->
     <div class="gov-banner" role="banner" aria-label="Informações do Governo Brasileiro">
         <p>Governo da República Federativa do Brasil | Ministério da Saúde</p>
     </div>
 
-    <!-- Header -->
     <header role="banner">
         <div class="header-inner">
             <div class="logo">
@@ -32,54 +29,54 @@
                     <li><a href="#inicio">Início</a></li>
                     <li><a href="catalogo.html">Catálogo de Vacinas</a></li>
                     <li><a href="faq.html">Perguntas Frequentes</a></li>
-                    <li><a href="propostas.html">Propostas do Governo</a></li>
+                    <li><a href="propostas.html">Propostas</a></li>
                     <li><a href="compromissos.html">Nossos Compromissos</a></li>
+                    <li><a href="javascript:void(0)" onclick="openSuggestionsModal()">Sugestões</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main id="main">
-        <!-- Hero Section -->
         <section class="hero" id="inicio">
             <div class="hero-content">
                 <h1>VACLOG - Saúde Pública Transparente</h1>
                 <p>Informações oficiais e confiáveis sobre vacinação no Brasil</p>
-                <p class="subtitle">Bem-vindo ao portal oficial de informações sobre campanhas de vacinação e saúde pública. Aqui você encontra dados transparentes, científicos e atualizados sobre todas as vacinas disponíveis no Brasil.</p>
+                <p class="subtitle">Bem-vindo ao portal oficial de informações sobre campanhas de vacinação. Aqui você encontra dados transparentes, científicos e atualizados sobre todas as vacinas disponíveis.</p>
             </div>
         </section>
 
-        <!-- Popup Modal -->
+        <!-- Welcome Modal -->
         <div id="welcomeModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
             <div class="modal-content">
                 <button class="close-modal" aria-label="Fechar" onclick="document.getElementById('welcomeModal').style.display='none';">×</button>
                 <h2 id="modalTitle">Bem-vindo ao VACLOG!</h2>
-                <p>Este é o portal oficial do Governo Brasileiro para informações sobre vacinas. Navegue pelas seções para aprender sobre:</p>
+                <p>Este é o portal oficial do Governo Brasileiro para informações sobre vacinas:</p>
                 <ul>
-                    <li>✓ Todas as vacinas disponíveis</li>
-                    <li>✓ Benefícios e segurança</li>
-                    <li>✓ Campanhas de vacinação</li>
-                    <li>✓ Resposta a dúvidas comuns</li>
+                    <li>✓ Informações científicas confiáveis</li>
+                    <li>✓ Dúvidas frequentes respondidas</li>
+                    <li>✓ Propostas e políticas públicas</li>
+                    <li>✓ Envie suas sugestões</li>
                 </ul>
-                <button onclick="document.getElementById('welcomeModal').style.display='none';" class="btn-primary">Entendido</button>
+                <button onclick="document.getElementById('welcomeModal').style.display='none';" class="btn-primary">Começar</button>
             </div>
         </div>
 
-        <!-- Main Cards Grid -->
+        <!-- Cards Grid -->
         <section class="cards-grid">
             <a href="catalogo.html" class="card card-vaccines">
                 <h3>📋 Catálogo de Vacinas</h3>
-                <p>Conheça todas as vacinas disponíveis no Brasil, seus benefícios e eficácia comprovada cientificamente.</p>
+                <p>Conheça todas as vacinas disponíveis no Brasil, seus benefícios e eficácia comprovada.</p>
             </a>
 
             <a href="faq.html" class="card card-faq">
                 <h3>❓ Perguntas Frequentes</h3>
-                <p>Respostas baseadas em ciência a dúvidas comuns sobre vacinação, efeitos colaterais e segurança.</p>
+                <p>Respostas baseadas em ciência a dúvidas comuns sobre vacinação e segurança.</p>
             </a>
 
             <a href="propostas.html" class="card card-propostas">
                 <h3>📊 Propostas do Governo</h3>
-                <p>Conheça as políticas, estratégias e metas do governo para ampliar o acesso à vacinação.</p>
+                <p>Conheça as políticas, estratégias e metas do governo para ampliar a vacinação.</p>
             </a>
 
             <a href="compromissos.html" class="card card-compromissos">
@@ -88,44 +85,113 @@
             </a>
         </section>
 
-        <!-- Info Section -->
+        <!-- Expandable Sections -->
         <section class="info-section">
-            <div class="info-card">
-                <h2>Por que este portal existe?</h2>
-                <p>A vacinação é uma das maiores conquistas da medicina moderna. Para combater a desinformação e fortalecer a confiança pública, criamos este portal com informações 100% transparentes, baseadas em evidências científicas sólidas.</p>
-                
-                <h3>Nossos Objetivos:</h3>
-                <ul>
-                    <li><strong>Transparência:</strong> Dados abertos e acessíveis sobre todas as campanhas de vacinação</li>
-                    <li><strong>Educação:</strong> Informações científicas e confiáveis para todos os brasileiros</li>
-                    <li><strong>Acesso Universal:</strong> Garantir que todos possam acessar vacinas gratuitamente</li>
-                    <li><strong>Combate à Desinformação:</strong> Esclarecer mitos e dados imprecisos sobre vacinação</li>
-                </ul>
+            <div class="expandable-section">
+                <button class="expand-btn" onclick="toggleSection(this)" aria-expanded="false">
+                    <span class="arrow">▶</span> Por que este portal existe?
+                </button>
+                <div class="section-content" style="display: none;">
+                    <p>A vacinação é uma das maiores conquistas da medicina moderna. Para combater a desinformação e fortalecer a confiança pública, criamos este portal com informações 100% transparentes, baseadas em evidências científicas sólidas.</p>
+                </div>
+            </div>
 
-                <h3>Saiba Mais:</h3>
-                <p>Use o menu de navegação acima para explorar as seções. Cada página contém informações detalhadas e links para fontes científicas confiáveis.</p>
+            <div class="expandable-section">
+                <button class="expand-btn" onclick="toggleSection(this)" aria-expanded="false">
+                    <span class="arrow">▶</span> Nossos Objetivos
+                </button>
+                <div class="section-content" style="display: none;">
+                    <ul>
+                        <li><strong>Transparência:</strong> Dados abertos e acessíveis sobre campanhas de vacinação</li>
+                        <li><strong>Educação:</strong> Informações científicas e confiáveis para todos</li>
+                        <li><strong>Acesso Universal:</strong> Garantir acesso gratuito às vacinas</li>
+                        <li><strong>Combate à Desinformação:</strong> Esclarecer mitos e dados imprecisos</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="expandable-section">
+                <button class="expand-btn" onclick="toggleSection(this)" aria-expanded="false">
+                    <span class="arrow">▶</span> Histórico: Revolta da Vacina de 1904
+                </button>
+                <div class="section-content" style="display: none;">
+                    <p>Em 1904, a vacinação obrigatória contra a varíola causou revolta social no Rio de Janeiro. Hoje, compreendemos a importância das vacinas e buscamos envolver a população de forma transparente e baseada em evidências científicas.</p>
+                    <p>Este portal é um compromisso com a informação clara e a confiança pública.</p>
+                </div>
+            </div>
+
+            <div class="expandable-section">
+                <button class="expand-btn" onclick="toggleSection(this)" aria-expanded="false">
+                    <span class="arrow">▶</span> Como funciona a vacinação?
+                </button>
+                <div class="section-content" style="display: none;">
+                    <p>As vacinas estimulam nosso sistema imunológico a criar defesas contra doenças. Elas contêm enfraquecimentos ou partes de vírus/bactérias, permitindo que nosso corpo aprenda a se defender sem causar a doença.</p>
+                    <p>São rigorosamente testadas antes de aprovação.</p>
+                </div>
             </div>
         </section>
 
         <!-- Accessibility Info -->
         <section class="accessibility-section">
             <h2>Acessibilidade</h2>
-            <p>Este site foi desenvolvido seguindo padrões WCAG 2.1 para garantir acessibilidade máxima. Você pode:</p>
+            <p>Este site foi desenvolvido com padrões WCAG 2.1. Você pode:</p>
             <ul>
-                <li>Usar o seu leitor de tela</li>
-                <li>Navegar apenas com teclado (Tab, Enter, Setas)</li>
-                <li>Aumentar o tamanho da fonte no navegador</li>
-                <li>Ativar contraste alto em seu sistema operacional</li>
+                <li>Usar leitor de tela</li>
+                <li>Navegar apenas com teclado</li>
+                <li>Aumentar o tamanho da fonte</li>
+                <li>Ativar contraste alto</li>
             </ul>
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Suggestions Modal -->
+    <div id="suggestionsModal" class="modal" role="dialog" aria-labelledby="suggestionsTitle" aria-modal="true">
+        <div class="modal-content">
+            <button class="close-modal" aria-label="Fechar" onclick="document.getElementById('suggestionsModal').style.display='none';">×</button>
+            <h2 id="suggestionsTitle">Envie suas Sugestões</h2>
+            <p>Ajude-nos a melhorar este portal com suas sugestões:</p>
+            <form onsubmit="handleSuggestionSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Nome (opcional):</label>
+                    <input type="text" id="name" placeholder="Seu nome" />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email (opcional):</label>
+                    <input type="email" id="email" placeholder="seu@email.com" />
+                </div>
+                <div class="form-group">
+                    <label for="subject">Assunto:</label>
+                    <select id="subject" required>
+                        <option value="">Escolha um assunto</option>
+                        <option value="conteudo">Sugestão de Conteúdo</option>
+                        <option value="acessibilidade">Acessibilidade</option>
+                        <option value="erro">Relatar Erro</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensagem:</label>
+                    <textarea id="message" rows="5" placeholder="Sua sugestão aqui..." required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Enviar Sugestão</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal" role="dialog" aria-labelledby="successTitle" aria-modal="true">
+        <div class="modal-content modal-small">
+            <h2 id="successTitle">✓ Sugestão Enviada!</h2>
+            <p>Obrigado por sua contribuição. Sua sugestão foi registrada e será analisada pelo nosso time.</p>
+            <button onclick="document.getElementById('successModal').style.display='none';" class="btn-primary">Fechar</button>
+        </div>
+    </div>
+
     <footer role="contentinfo">
         <div class="footer-inner">
             <p><strong>VACLOG - Portal Oficial de Informações sobre Vacinas</strong></p>
             <p>Governo Federal | Ministério da Saúde</p>
-            <p class="footer-note">Todos os dados apresentados neste portal são baseados em evidências científicas e atualizados regularmente.</p>
+            <p class="footer-note">Todos os dados são baseados em evidências científicas e atualizados regularmente.</p>
             <p style="font-size: 0.9rem; margin-top: 1rem;">
                 <a href="#inicio">Voltar ao topo</a>
             </p>
@@ -133,7 +199,7 @@
     </footer>
 
     <script>
-        // Show welcome modal on page load
+        // Welcome modal
         window.addEventListener('load', function() {
             const modal = document.getElementById('welcomeModal');
             if (modal && !localStorage.getItem('vaclog-visited')) {
@@ -142,15 +208,49 @@
             }
         });
 
-        // Close modal on Escape key
+        // Close modal on Escape
         document.addEventListener('keydown', function(event) {
-            const modal = document.getElementById('welcomeModal');
-            if (event.key === 'Escape' && modal.style.display === 'block') {
-                modal.style.display = 'none';
+            if (event.key === 'Escape') {
+                document.getElementById('welcomeModal').style.display = 'none';
+                document.getElementById('suggestionsModal').style.display = 'none';
+                document.getElementById('successModal').style.display = 'none';
             }
         });
 
-        // Keyboard navigation for accessibility
+        // Toggle expandable sections
+        function toggleSection(button) {
+            const content = button.nextElementSibling;
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+            
+            button.setAttribute('aria-expanded', !isExpanded);
+            button.querySelector('.arrow').textContent = isExpanded ? '▶' : '▼';
+            content.style.display = isExpanded ? 'none' : 'block';
+        }
+
+        // Suggestions modal
+        function openSuggestionsModal() {
+            document.getElementById('suggestionsModal').style.display = 'block';
+        }
+
+        function handleSuggestionSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value || 'Anônimo';
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Aqui você pode adicionar código para enviar para um backend
+            console.log('Sugestão:', { name, subject, message });
+            
+            // Show success modal
+            document.getElementById('suggestionsModal').style.display = 'none';
+            document.getElementById('successModal').style.display = 'block';
+            
+            // Reset form
+            event.target.reset();
+        }
+
+        // Keyboard navigation
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Tab') {
                 document.body.classList.add('keyboard-nav');
