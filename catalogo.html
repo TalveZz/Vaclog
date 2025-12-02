@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Catalogo de Vacinas - Portal de Transparencia Vacinal</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="logo"><a href="index.html">Ministerio da Saude</a></div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Voltar para Inicio</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="page-container">
+    <h1>Catalogo de Vacinas</h1>
+    <p>Busque informacoes sobre qualquer vacina disponivel no Brasil.</p>
+    
+    <div class="search-section" style="margin: 2rem 0; padding: 1.5rem; background: #f0f9ff; border-radius: 8px;">
+      <h2>Procure uma Vacina</h2>
+      <div class="search-box" style="margin: 1rem 0;">
+        <input type="text" id="search-input" placeholder="Ex: dengue, gripe, HPV, COVID-19, febre amarela, sarampo..." 
+               style="width: 100%; padding: 0.75rem; font-size: 1rem; border: 1px solid #ddd; border-radius: 4px;">
+        <div id="suggestions" class="suggestions-list" style="margin-top: 1rem;"></div>
+      </div>
+    </div>
+
+    <div style="margin: 2rem 0;">
+      <h2>Vacinas Disponiveis</h2>
+      <div id="vaccines-list" class="vaccines-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;"></div>
+    </div>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <p>Ministerio da Saude - Portal de Transparencia Vacinal</p>
+    </div>
+  </footer>
+
+  <script>
+    const vaccines = [
+      { name: 'Dengue', desc: 'Protecao contra dengue', file: 'dengue-qdenga.html' },
+      { name: 'Gripe', desc: 'Protecao contra gripe sazonal', file: 'gripe-influenza.html' },
+      { name: 'HPV Quadrivalente', desc: 'Prevencao de cancer HPV', file: 'hpv-quadrivalente.html' },
+      { name: 'HPV Nonovalente', desc: 'Prevencao ampla de cancer HPV', file: 'hpv-nonavalente.html' },
+      { name: 'COVID-19 Tipo A', desc: 'Protecao contra COVID-19', file: 'covid19-vacina-a.html' },
+      { name: 'COVID-19 Tipo B', desc: 'Reforco contra COVID-19', file: 'covid19-vacina-b.html' },
+      { name: 'Febre Amarela', desc: 'Protecao contra febre amarela', file: 'febre-amarela.html' },
+      { name: 'Sarampo', desc: 'Protecao contra sarampo', file: 'sarampo-triplice-viral.html' }
+    ];
+
+    const searchInput = document.getElementById('search-input');
+    const suggestions = document.getElementById('suggestions');
+    const vaccinesList = document.getElementById('vaccines-list');
+
+    function renderVaccines(filtered = vaccines) {
+      vaccinesList.innerHTML = filtered.map(v => `
+        <div style="padding: 1rem; border: 1px solid #ddd; border-radius: 8px; background: #fafafa; cursor: pointer;" onclick="window.location.href='${v.file}'">
+          <h3 style="margin: 0 0 0.5rem 0;">${v.name}</h3>
+          <p style="margin: 0; color: #666;">${v.desc}</p>
+        </div>
+      `).join('');
+    }
+
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase();
+      if (query.length === 0) {
+        suggestions.innerHTML = '';
+        renderVaccines();
+        return;
+      }
+
+      const filtered = vaccines.filter(v => 
+        v.name.toLowerCase().includes(query) || v.desc.toLowerCase().includes(query)
+      );
+
+      if (filtered.length > 0) {
+        suggestions.innerHTML = filtered.map(v => `
+          <div style="padding: 0.5rem; background: white; margin: 0.25rem 0; border-radius: 4px; border-left: 3px solid #1e40af; cursor: pointer;" 
+               onclick="document.getElementById('search-input').value = '${v.name}'; document.getElementById('search-input').dispatchEvent(new Event('input'));">
+            <strong>${v.name}</strong><br>
+            <small>${v.desc}</small>
+          </div>
+        `).join('');
+        renderVaccines(filtered);
+      } else {
+        suggestions.innerHTML = '<p style="color: #999;">Nenhuma vacina encontrada</p>';
+        vaccinesList.innerHTML = '';
+      }
+    });
+
+    // Initial render
+    renderVaccines();
+  </script>
+</body>
+</html>
