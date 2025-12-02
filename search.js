@@ -234,4 +234,9 @@ if (botaoBusca) {
       status.textContent = "Nenhuma vacina encontrada com esse nome.";
     }
   });
+  
+// Initialize status message with helpful text on page load
+if (status) {
+  status.textContent = "Ex. dengue, gripe, HPV, COVID-19...";
+}
 }
