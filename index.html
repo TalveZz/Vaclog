@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Transparência Vacinal - Portal do Governo com Compromissos, Campanhas de Vacinação e Participação Cidadã" />
+  <meta name="description" content="Transparência Vacinal - Portal do Governo" />
   <meta name="theme-color" content="#1e40af" />
   <title>Transparência Vacinal - Portal Oficial</title>
   <link rel="stylesheet" href="styles.css" />
@@ -12,7 +12,7 @@
   <!-- Header -->
   <header role="banner">
     <div class="header-inner">
-      <div class="logo" aria-label="Transparência Vacinal - Portal Oficial do Governo">
+      <div class="logo" aria-label="Transparência Vacinal">
         🏛️ Transparência Vacinal
       </div>
       <button id="menu-toggle" class="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
@@ -22,13 +22,11 @@
       </button>
       <nav aria-label="Navegação principal" id="nav-menu" class="nav-menu">
         <ul>
-          <li><a href="#inicio">Início</a></li>
-          <li><a href="#compromissos">Compromissos</a></li>
-          <li><a href="#campanhas">Campanhas</a></li>
-          <li><a href="#catalogo">Catálogo Vacinas</a></li>
-          <li><a href="#feedback">Sua Voz</a></li>
-          <li><a href="#transparencia">Transparência</a></li>
-          <li><a href="#acessibilidade">Acessibilidade</a></li>
+          <li><a href="#">Início</a></li>
+          <li><a href="compromissos.html">Compromissos</a></li>
+          <li><a href="campanhas.html">Campanhas</a></li>
+          <li><a href="feedback.html">Sua Voz</a></li>
+          <li><a href="transparencia.html">Transparência</a></li>
         </ul>
       </nav>
     </div>
@@ -36,130 +34,66 @@
 
   <main>
     <!-- Hero Section -->
-    <section id="inicio" class="hero">
-      <h1>Portal de Transparência Vacinal</h1>
-      <p>Compromisso com a verdade, transparência nas campanhas e escuta ativa à população.</p>
-      <p class="hero-subtitle">Aqui você acompanha as promessas do governo, participa com suas ideias e acessa informações claras sobre vacinas.</p>
-    </section>
-
-    <!-- Compromissos Section -->
-    <section id="compromissos" class="section">
-      <div class="section-header">
-        <h2>Compromissos com a População</h2>
-        <p>Rastreie o cumprimento das promessas do governo em relação à vacinação</p>
-      </div>
-      <div class="compromissos-grid" id="compromissos-grid">
-        <!-- Preenchido por JS -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Portal de Transparência Vacinal</h1>
+        <p>Compromisso com a verdade, transparência nas campanhas e escuta ativa à população.</p>
       </div>
     </section>
 
-    <!-- Campanhas Section -->
-    <section id="campanhas" class="section">
-      <div class="section-header">
-        <h2>Campanhas de Vacinação</h2>
-        <p>Conheça as campanhas atuais e seus benefícios para a saúde pública</p>
-      </div>
-      <div class="campanhas-grid" id="campanhas-grid">
-        <!-- Preenchido por JS -->
-      </div>
-    </section>
-
-    <!-- Catálogo de Vacinas -->
-    <section id="catalogo" class="section search-section">
-      <div class="section-header">
-        <h2>Catálogo de Vacinas</h2>
-        <p>Busque informações sobre qualquer vacina</p>
-      </div>
-      <div class="search-box-main">
-        <div class="search-input-wrap">
-          <input type="text" id="campo-busca" placeholder="Ex: dengue, gripe, HPV, COVID-19..." aria-label="Buscar vacina">
-          <button id="botao-busca" class="btn-primary">Buscar</button>
+    <!-- Cards Grid -->
+    <section class="main-cards">
+      <!-- Compromissos Card -->
+      <a href="compromissos.html" class="card-link">
+        <div class="card card-compromissos">
+          <div class="card-icon">📝</div>
+          <h2>Compromissos</h2>
+          <p>Rastreie o cumprimento das promessas do governo em relação à vacinação</p>
+          <div class="card-footer">Ver Detalhes →</div>
         </div>
-        <ul id="lista-sugestoes" class="suggestions" role="listbox"></ul>
-      </div>
+      </a>
+
+      <!-- Campanhas Card -->
+      <a href="campanhas.html" class="card-link">
+        <div class="card card-campanhas">
+          <div class="card-icon">💺</div>
+          <h2>Campanhas</h2>
+          <p>Conheça as campanhas de vacinação ativas e seus benefícios</p>
+          <div class="card-footer">Ver Detalhes →</div>
+        </div>
+      </a>
+
+      <!-- Sua Voz Card -->
+      <a href="feedback.html" class="card-link">
+        <div class="card card-feedback">
+          <div class="card-icon">🗣️</div>
+          <h2>Sua Voz Importa</h2>
+          <p>Envie sugestões e ideias para melhorar as políticas de vacinação</p>
+          <div class="card-footer">Enviar Sugestão →</div>
+        </div>
+      </a>
+
+      <!-- Transparência Card -->
+      <a href="transparencia.html" class="card-link">
+        <div class="card card-transparencia">
+          <div class="card-icon">📊</div>
+          <h2>Transparência</h2>
+          <p>Acompanhe as estatísticas e dados de cobertura vacinal</p>
+          <div class="card-footer">Ver Dados →</div>
+        </div>
+      </a>
     </section>
 
-    <!-- Feedback/Participação Cidadã -->
-    <section id="feedback" class="section feedback-section">
-      <div class="section-header">
-        <h2>Sua Voz Importa - Envie Sugestões</h2>
-        <p>Contribua com ideias para melhorar as políticas de vacinação e campanhas</p>
-      </div>
-      <div class="feedback-container">
-        <form id="form-feedback" class="feedback-form">
-          <div class="form-group">
-            <label for="nome">Nome (opcional)</label>
-            <input type="text" id="nome" name="nome" placeholder="Seu nome">
-          </div>
-          <div class="form-group">
-            <label for="email">Email (para resposta)</label>
-            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
-          </div>
-          <div class="form-group">
-            <label for="categoria">Categoria da Sugestão</label>
-            <select id="categoria" name="categoria" required>
-              <option value="">Selecione uma categoria...</option>
-              <option value="campanha">Melhoria nas Campanhas</option>
-              <option value="comunicacao">Comunicação e Transparência</option>
-              <option value="acesso">Acesso e Disponibilidade</option>
-              <option value="educacao">Educação e Informação</option>
-              <option value="infraestrutura">Infraestrutura de Saúde</option>
-              <option value="outro">Outro</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="mensagem">Sua Sugestão/Denúncia</label>
-            <textarea id="mensagem" name="mensagem" placeholder="Compartilhe sua ideia ou preocupação..." rows="6" required></textarea>
-          </div>
-          <div class="form-group">
-            <label>
-              <input type="checkbox" id="publico" name="publico" value="true">
-              Permitir que minha sugestão seja publicada (anônimo)
-            </label>
-          </div>
-          <button type="submit" class="btn-primary btn-large">Enviar Sugestão</button>
-        </form>
-        <div id="feedback-status" class="feedback-status" role="status" aria-live="polite"></div>
-      </div>
-    </section>
-
-    <!-- Painel de Transparência -->
-    <section id="transparencia" class="section">
-      <div class="section-header">
-        <h2>Painel de Transparência</h2>
-        <p>Estatísticas e dados sobre cobertura vacinal e execução de campanhas</p>
-      </div>
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-value" id="cobertura-total">-</div>
-          <div class="stat-label">Cobertura Vacinal Nacional</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-value" id="campanhas-ativas">-</div>
-          <div class="stat-label">Campanhas Ativas</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-value" id="compromissos-cumpridos">-</div>
-          <div class="stat-label">Compromissos Cumpridos</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-value" id="feedback-recebido">-</div>
-          <div class="stat-label">Sugestões Recebidas</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Acessibilidade -->
-    <section id="acessibilidade" class="section">
-      <h2>Acessibilidade</h2>
-      <div class="card">
-        <p>Este portal foi desenvolvido com altos padrões de acessibilidade WCAG 2.1 AA.</p>
+    <!-- Info Section -->
+    <section class="info-section">
+      <div class="info-card">
+        <h2>🌟 Sobre Este Portal</h2>
+        <p>Este é um portal dedicado à transparência das políticas de vacinação. Aqui você pode:</p>
         <ul>
-          <li>✓ Contraste adequado entre textos e fundos</li>
-          <li>✓ Tipografia clara e legível</li>
-          <li>✓ Compatível com leitores de tela</li>
-          <li>✓ Navegação por teclado</li>
-          <li>✓ Descrições alternativas em imagens</li>
+          <li>✅ Acompanhar o cumprimento das promessas do governo</li>
+          <li>✅ Conhecer campanhas de vacinação ativas</li>
+          <li>✅ Enviar suas ideias e sugestões</li>
+          <li>✅ Consultar dados públicos de cobertura vacinal</li>
         </ul>
       </div>
     </section>
@@ -168,14 +102,11 @@
   <!-- Footer -->
   <footer role="contentinfo">
     <div class="footer-inner">
-      <p><strong>Portaria de Transparência Vacinal</strong> - Compromisso com a informação clara e a participação cidadã</p>
-      <p>Para denúncias, use o formulário acima. Sua voz é ouvida.</p>
+      <p><strong>Portal de Transparência Vacinal</strong></p>
+      <p>Compromisso com informação clara e participação cidadã</p>
     </div>
   </footer>
 
-  <script src="government-data.js"></script>
-  <script src="search.js"></script>
-  <script src="feedback.js"></script>
   <script>
     // Menu Toggle
     const menuToggle = document.getElementById('menu-toggle');
