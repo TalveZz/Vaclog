@@ -3,133 +3,197 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Vaclog: catálogo claro e acessível de vacinas para famílias, com linguagem simples e foco em benefícios e riscos." />
-  <meta name="theme-color" content="#2563eb" />
-  <title>Vaclog - Catálogo de Vacinas Acessível</title>
+  <meta name="description" content="Transparência Vacinal - Portal do Governo com Compromissos, Campanhas de Vacinação e Participação Cidadã" />
+  <meta name="theme-color" content="#1e40af" />
+  <title>Transparência Vacinal - Portal Oficial</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
-<!-- Header with semantic HTML5 -->
-<header role="banner">
-  <div class="header-inner">
-    <div class="logo" aria-label="Vaclog, catálogo de vacinas">
-      Vaclog
-    </div>
-    
-    <!-- Hamburger Menu Button -->
-    <button id="menu-toggle" class="hamburger" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="nav-menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <nav aria-label="Navegação principal" id="nav-menu" class="nav-menu">
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#catalogo">Catálogo de vacinas</a></li>
-        <li><a href="#como-funcionam">Como funcionam</a></li>
-        <li><a href="#linha-do-tempo">Linha do tempo</a></li>
-        <li><a href="#sobre">Sobre o Vaclog</a></li>
-        <li><a href="#acessibilidade">Acessibilidade</a></li>
-        <li><a href="#ajuda">Ajuda/Contato</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<!-- Search Section at Top -->
-<section id="catalogo" class="search-section">
-  <div class="search-container">
-    <h1>Procure uma Vacina</h1>
-    <p class="search-subtitle">Busque pelo nome da vacina ou pelo nome da doença</p>
-    
-    <div class="search-box-main">
-      <div class="search-input-wrap">
-        <input type="text" id="campo-busca" placeholder="Ex. dengue, gripe, HPV, COVID-19..." aria-label="Buscar vacina ou doença">
-        <button id="botao-busca" class="btn-primary">Buscar</button>
+  <!-- Header -->
+  <header role="banner">
+    <div class="header-inner">
+      <div class="logo" aria-label="Transparência Vacinal - Portal Oficial do Governo">
+        🏛️ Transparência Vacinal
       </div>
-      <ul id="lista-sugestoes" class="suggestions" role="listbox"></ul>
-            <div id="status-busca" class="search-help" role="status" aria-live="polite" aria-atomic="true"></div>
+      <button id="menu-toggle" class="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav aria-label="Navegação principal" id="nav-menu" class="nav-menu">
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#compromissos">Compromissos</a></li>
+          <li><a href="#campanhas">Campanhas</a></li>
+          <li><a href="#catalogo">Catálogo Vacinas</a></li>
+          <li><a href="#feedback">Sua Voz</a></li>
+          <li><a href="#transparencia">Transparência</a></li>
+          <li><a href="#acessibilidade">Acessibilidade</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <div class="quick-filters">
-      <label class="filters-label">Categorias rápidas</label>
-      <div class="chips-row">
-        <button class="chip" data-disease="dengue">Dengue</button>
-        <button class="chip" data-disease="gripe">Gripe</button>
-        <button class="chip" data-disease="hpv">HPV</button>
-        <button class="chip" data-disease="sarampo">Sarampo</button>
-        <button class="chip" data-disease="covid">COVID-19</button>
-        <button class="chip" data-disease="febre-amarela">Febre Amarela</button>
+  <main>
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+      <h1>Portal de Transparência Vacinal</h1>
+      <p>Compromisso com a verdade, transparência nas campanhas e escuta ativa à população.</p>
+      <p class="hero-subtitle">Aqui você acompanha as promessas do governo, participa com suas ideias e acessa informações claras sobre vacinas.</p>
+    </section>
+
+    <!-- Compromissos Section -->
+    <section id="compromissos" class="section">
+      <div class="section-header">
+        <h2>Compromissos com a População</h2>
+        <p>Rastreie o cumprimento das promessas do governo em relação à vacinação</p>
       </div>
+      <div class="compromissos-grid" id="compromissos-grid">
+        <!-- Preenchido por JS -->
+      </div>
+    </section>
+
+    <!-- Campanhas Section -->
+    <section id="campanhas" class="section">
+      <div class="section-header">
+        <h2>Campanhas de Vacinação</h2>
+        <p>Conheça as campanhas atuais e seus benefícios para a saúde pública</p>
+      </div>
+      <div class="campanhas-grid" id="campanhas-grid">
+        <!-- Preenchido por JS -->
+      </div>
+    </section>
+
+    <!-- Catálogo de Vacinas -->
+    <section id="catalogo" class="section search-section">
+      <div class="section-header">
+        <h2>Catálogo de Vacinas</h2>
+        <p>Busque informações sobre qualquer vacina</p>
+      </div>
+      <div class="search-box-main">
+        <div class="search-input-wrap">
+          <input type="text" id="campo-busca" placeholder="Ex: dengue, gripe, HPV, COVID-19..." aria-label="Buscar vacina">
+          <button id="botao-busca" class="btn-primary">Buscar</button>
+        </div>
+        <ul id="lista-sugestoes" class="suggestions" role="listbox"></ul>
+      </div>
+    </section>
+
+    <!-- Feedback/Participação Cidadã -->
+    <section id="feedback" class="section feedback-section">
+      <div class="section-header">
+        <h2>Sua Voz Importa - Envie Sugestões</h2>
+        <p>Contribua com ideias para melhorar as políticas de vacinação e campanhas</p>
+      </div>
+      <div class="feedback-container">
+        <form id="form-feedback" class="feedback-form">
+          <div class="form-group">
+            <label for="nome">Nome (opcional)</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome">
+          </div>
+          <div class="form-group">
+            <label for="email">Email (para resposta)</label>
+            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="categoria">Categoria da Sugestão</label>
+            <select id="categoria" name="categoria" required>
+              <option value="">Selecione uma categoria...</option>
+              <option value="campanha">Melhoria nas Campanhas</option>
+              <option value="comunicacao">Comunicação e Transparência</option>
+              <option value="acesso">Acesso e Disponibilidade</option>
+              <option value="educacao">Educação e Informação</option>
+              <option value="infraestrutura">Infraestrutura de Saúde</option>
+              <option value="outro">Outro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="mensagem">Sua Sugestão/Denúncia</label>
+            <textarea id="mensagem" name="mensagem" placeholder="Compartilhe sua ideia ou preocupação..." rows="6" required></textarea>
+          </div>
+          <div class="form-group">
+            <label>
+              <input type="checkbox" id="publico" name="publico" value="true">
+              Permitir que minha sugestão seja publicada (anônimo)
+            </label>
+          </div>
+          <button type="submit" class="btn-primary btn-large">Enviar Sugestão</button>
+        </form>
+        <div id="feedback-status" class="feedback-status" role="status" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- Painel de Transparência -->
+    <section id="transparencia" class="section">
+      <div class="section-header">
+        <h2>Painel de Transparência</h2>
+        <p>Estatísticas e dados sobre cobertura vacinal e execução de campanhas</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value" id="cobertura-total">-</div>
+          <div class="stat-label">Cobertura Vacinal Nacional</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="campanhas-ativas">-</div>
+          <div class="stat-label">Campanhas Ativas</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="compromissos-cumpridos">-</div>
+          <div class="stat-label">Compromissos Cumpridos</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="feedback-recebido">-</div>
+          <div class="stat-label">Sugestões Recebidas</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Acessibilidade -->
+    <section id="acessibilidade" class="section">
+      <h2>Acessibilidade</h2>
+      <div class="card">
+        <p>Este portal foi desenvolvido com altos padrões de acessibilidade WCAG 2.1 AA.</p>
+        <ul>
+          <li>✓ Contraste adequado entre textos e fundos</li>
+          <li>✓ Tipografia clara e legível</li>
+          <li>✓ Compatível com leitores de tela</li>
+          <li>✓ Navegação por teclado</li>
+          <li>✓ Descrições alternativas em imagens</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <p><strong>Portaria de Transparência Vacinal</strong> - Compromisso com a informação clara e a participação cidadã</p>
+      <p>Para denúncias, use o formulário acima. Sua voz é ouvida.</p>
     </div>
-  </div>
-</section>
+  </footer>
 
-<main>
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Vaclog: catálogo claro e confiável sobre vacinas</h1>
-    <p>Ajuda você e sua família a entender, com calma, por que as vacinas existem, quais são seus benefícios e quais riscos podem trazer, sem alarmismo nem promessas exageradas.</p>
-    <p class="hero-micro">Informação em linguagem simples, para adolescentes, adultos e crianças alfabetizadas.</p>
-  </section>
-
-  <!-- Info Section -->
-  <section id="sec-acessibilidade" class="section" aria-labelledby="sec-acessibilidade">
-    <h2 id="sec-acessibilidade">Acessibilidade</h2>
-    <div class="card">
-      <p>O Vaclog foi pensado para ser acessível, com bom contraste entre texto e fundo, fontes legíveis e organização clara das informações.</p>
-      <p>Ícones são sempre acompanhados de texto, os elementos seguem landmarks como header, nav, main e footer, e imagens importantes recebem texto alternativo para leitores de tela.</p>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="sobre" class="section" aria-labelledby="sec-sobre">
-    <h2 id="sec-sobre">Sobre o Vaclog</h2>
-    <div class="card">
-      <p>O Vaclog é um catálogo educativo de vacinas com linguagem simples, criado para ajudar pessoas leigas a entender benefícios e riscos de forma calma e transparente.</p>
-    </div>
-  </section>
-
-  <!-- Help/Contact Section -->
-  <section id="ajuda" class="section" aria-labelledby="sec-ajuda">
-    <h2 id="sec-ajuda">Ajuda / Contato</h2>
-    <div class="card">
-      <p>Teve dificuldade de entender alguma parte ou acessibilidade que pode melhorar? Envie seu feedback para a equipe do Vaclog.</p>
-    </div>
-  </section>
-</main>
-
-<!-- Footer -->
-<footer role="contentinfo">
-  <div class="footer-inner">
-    <p><strong>Aviso:</strong> o Vaclog é um site informativo e não substitui consulta médica.</p>
-    <p>Para decisões sobre sua saúde e de sua família, sempre converse com profissionais de saúde de confiança.</p>
-    <p>As informações são baseadas em diretrizes e materiais de instituições de saúde reconhecidas, revisadas e atualizadas periodicamente.</p>
-  </div>
-</footer>
-
-<script src="search.js"></ script>
-<script>
-  // Menu Toggle
-  const menuToggle = document.getElementById('menu-toggle');
-  const navMenu = document.getElementById('nav-menu');
-  
-  menuToggle.addEventListener('click', function() {
-    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-    menuToggle.setAttribute('aria-expanded', !isExpanded);
-    navMenu.classList.toggle('active');
-  });
-  
-  // Close menu when a link is clicked
-  const navLinks = navMenu.querySelectorAll('a');
-  navLinks.forEach(link => {
-    link.addEventListener('click', function() {
-      menuToggle.setAttribute('aria-expanded', 'false');
-      navMenu.classList.remove('active');
+  <script src="government-data.js"></script>
+  <script src="search.js"></script>
+  <script src="feedback.js"></script>
+  <script>
+    // Menu Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    
+    menuToggle.addEventListener('click', function() {
+      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !isExpanded);
+      navMenu.classList.toggle('active');
     });
-  });
-</script>
+    
+    const navLinks = navMenu.querySelectorAll('a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        menuToggle.setAttribute('aria-expanded', 'false');
+        navMenu.classList.remove('active');
+      });
+    });
+  </script>
 </body>
 </html>
