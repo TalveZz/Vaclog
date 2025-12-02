@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Varíola | Vaclog</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #fafaf7;
+    }
+    
+    header {
+      background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+      color: #fff;
+      padding: 2rem 0;
+      box-shadow: 0 4px 6px rgba(249, 115, 22, 0.15);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    header a {
+      color: #fff;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 500;
+      transition: opacity 0.3s ease;
+    }
+    
+    header a:hover {
+      opacity: 0.9;
+    }
+    
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 2rem;
+    }
+    
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #ea580c;
+      color: white;
+      padding: 8px;
+      text-decoration: none;
+      z-index: 100;
+    }
+    
+    .skip-link:focus {
+      top: 0;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      color: #1f2937;
+      margin-bottom: 0.5rem;
+      margin-top: 2rem;
+    }
+    
+    .subtitle {
+      font-size: 1.1rem;
+      color: #6b7280;
+      font-style: italic;
+      margin-bottom: 2rem;
+    }
+    
+    .info-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    
+    .info-card {
+      background: white;
+      border-left: 4px solid #f97316;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .info-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(249, 115, 22, 0.12);
+    }
+    
+    .info-card h3 {
+      color: #ea580c;
+      font-size: 1.3rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .info-card p {
+      color: #555;
+      line-height: 1.7;
+    }
+    
+    section {
+      background: white;
+      border-radius: 12px;
+      margin: 2.5rem 0;
+      padding: 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+    
+    section h2 {
+      color: #1f2937;
+      border-bottom: 3px solid #f97316;
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+    }
+    
+    ul, ol {
+      margin-left: 2rem;
+      margin-top: 1rem;
+    }
+    
+    li {
+      margin-bottom: 0.75rem;
+      line-height: 1.7;
+      color: #444;
+    }
+    
+    p {
+      margin-bottom: 1rem;
+      text-align: justify;
+      line-height: 1.8;
+      color: #555;
+    }
+    
+    .highlight {
+      background: #fef3c7;
+      padding: 1.5rem;
+      border-left: 4px solid #f59e0b;
+      border-radius: 4px;
+      margin: 1.5rem 0;
+    }
+    
+    .highlight strong {
+      color: #ea580c;
+    }
+    
+    footer {
+      background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+      border-top: 2px solid #e5e7eb;
+    }
+    
+    footer p {
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+    
+    a {
+      color: #ea580c;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    
+    a:hover {
+      color: #dc2626;
+      text-decoration: underline;
+    }
+    
+    .icon {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      margin-right: 0.5rem;
+    }
+    
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+      
+      section {
+        padding: 1.5rem;
+      }
+      
+      .info-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+  
+  <header role="banner">
+    <nav>
+      <a href="index.html">← Voltar ao Início</a>
+    </nav>
+  </header>
+  
+  <main role="main" id="conteudo-principal">
+    <h1>Varíola - Vacina Contra a Erradicação</h1>
+    <p class="subtitle">Conhecendo a vacina que eliminou uma das maiores pragas da humanidade</p>
+    
+    <div class="info-cards">
+      <div class="info-card">
+        <h3>🎯 O que é</h3>
+        <p>Vacina que protege contra o vírus da varíola, doença que causou milhões de mortes ao longo da história.</p>
+      </div>
+      <div class="info-card">
+        <h3>✓ Status Atual</h3>
+        <p>Erradicada globalmente desde 1980. Vacinação continua sendo importante para investigadores.</p>
+      </div>
+      <div class="info-card">
+        <h3>🛡️ Proteção</h3>
+        <p>100% eficaz contra a varíola quando administrada antes da exposição ao vírus.</p>
+      </div>
+    </div>
+    
+    <section aria-labelledby="sobre">
+      <h2 id="sobre">Sobre a Vacina</h2>
+      <p>A vacina contra a varíola é uma das maiores conquistas da medicina moderna. Ela foi fundamental para a erradicação da varíola, declarada livre de circulação pela Organização Mundial da Saúde em 1980.</p>
+      <p>A varíola é uma doença viral extremamente contagiosa que causou morte e desfiguração em milhões de pessoas ao longo dos séculos. Sua erradicação representa um marco histórico na saúde pública global.</p>
+      <p>A vacina original era feita a partir do vírus da varíola bovina (vaccinia), menos letal que a varíola humana. Este método revolucionário foi desenvolvido por Edward Jenner em 1796.</p>
+    </section>
+    
+    <section aria-labelledby="indicacoes">
+      <h2 id="indicacoes">Indicações</h2>
+      <ul>
+        <li>Pessoal de laboratório que trabalha com ortopoxvírus (vírus relacionados)</li>
+        <li>Profissionais de saúde em risco ocupacional</li>
+        <li>Pessoas com exposição documentada ao vírus</li>
+        <li>Investigadores e estudantes que trabalham com o vírus</li>
+        <li>Viajantes para áreas com possível exposição (casos raros)</li>
+      </ul>
+      <div class="highlight">
+        <strong>⚠️ Nota Importante:</strong> A vacinação de rotina NÃO é mais recomendada para o público geral, pois a doença foi erradicada. A vacina é oferecida apenas para grupos de alto risco ocupacional.
+      </div>
+    </section>
+    
+    <section aria-labelledby="efeitos">
+      <h2 id="efeitos">Possíveis Efeitos Colaterais</h2>
+      <ul>
+        <li><strong>Leve a Moderado:</strong> Dor, vermelhidão e inchaço no local da injeção</li>
+        <li><strong>Leve a Moderado:</strong> Febre (até 39°C)</li>
+        <li><strong>Leve a Moderado:</strong> Dor muscular e articular</li>
+        <li><strong>Leve a Moderado:</strong> Fadiga e mal-estar geral</li>
+        <li><strong>Raro:</strong> Encefalite (inflamação do cérebro) - causa extremamente rara</li>
+        <li><strong>Muito Raro:</strong> Complicações na pele em imunossuprimidos</li>
+      </ul>
+      <p>A maioria dos efeitos colaterais desaparece em poucos dias. Se sintomas persistirem além de 2 semanas, consulte um profissional de saúde.</p>
+    </section>
+    
+    <section aria-labelledby="contra">
+      <h2 id="contra">Contraindicações</h2>
+      <ul>
+        <li>Alergia grave a qualquer componente da vacina</li>
+        <li>Imunodeficiência severa (HIV/AIDS avançado, cancer, etc.)</li>
+        <li>Uso de medicamentos imunossupressores</li>
+        <li>Dermatite atópica ativa</li>
+        <li>Gravidez (deve ser adiada até após o término da gravidez)</li>
+        <li>Amamentação (aconselha-se aguardar)</li>
+        <li>Doenças agudas febris de moderada a grave</li>
+      </ul>
+    </section>
+    
+    <section aria-labelledby="faq">
+      <h2 id="faq">Perguntas Frequentes</h2>
+      <ul>
+        <li>
+          <strong>A varíola ainda existe?</strong> Não. A varíola foi declarada erradicada em 1980. É a única doença humana completamente eliminada do planeta.
+        </li>
+        <li>
+          <strong>Por que ainda precisamos saber sobre a varíola?</strong> Por questões de vigilância em saúde e porque alguns laboratórios ainda mantêm amostras para pesquisa.
+        </li>
+        <li>
+          <strong>Quantas doses são necessárias?</strong> Uma dose primária oferece proteção duradoura. Revacinação pode ser necessária a cada 10 anos para profissionais em risco.
+        </li>
+        <li>
+          <strong>A varíola pode voltar?</strong> É extremamente improvável, mas há esforços contínuos de vigilância global para monitorar qualquer reaparecimento.
+        </li>
+        <li>
+          <strong>Qual a diferença entre varíola e varicela?</strong> A varíola (causada pelo vírus Variola) é muito mais grave. A varicela é causada pelo herpes-vírus varicela-zóster (catapora).
+        </li>
+      </ul>
+    </section>
+  </main>
+  
+  <footer role="contentinfo">
+    <p>© 2024 Vaclog - Catálogo de Vacinas Acessível. <a href="index.html">Voltar ao Início</a></p>
+    <p><small>Informações baseadas em diretrizes da OMS e institucões de saúde reconhecidas</small></p>
+  </footer>
+</body>
+</html>
