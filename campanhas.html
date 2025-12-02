@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Campanhas - Transparência Vacinal</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="logo"><a href="index.html">🏛️ Voltar</a></div>
+    </div>
+  </header>
+  <main class="page-container">
+    <h1>💺 Campanhas de Vacinação</h1>
+    <div id="campanhas-list" class="page-content"></div>
+  </main>
+  <footer><p>🏛️ Portal</p></footer>
+  <script src="government-data.js"></script>
+  <script>
+    const list = document.getElementById('campanhas-list');
+    list.innerHTML = campaigns.map(c => `
+      <div class="detail-card">
+        <h3>${c.nome}</h3>
+        <p><strong>Eficácia:</strong> ${c.eficacia}</p>
+        <div class="progress-bar"><div class="progress-fill" style="width: ${c.cobertura}%"></div></div>
+      </div>
+    `).join('');
+  </script>
+</body>
+</html>
