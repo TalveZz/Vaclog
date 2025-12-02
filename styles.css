@@ -73,6 +73,141 @@ header nav a:hover {
   color: var(--blue-dark);
 }
 
+/* Search Section - NEW STYLES */
+.search-section {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  padding: 2.5rem 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(25, 118, 210, 0.1);
+}
+
+.search-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.search-container h1 {
+  font-size: 2rem;
+  color: var(--blue-dark);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.search-subtitle {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.search-box-main {
+  background: white;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1.5rem;
+}
+
+.search-input-wrap {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.search-input-wrap input {
+  flex: 1;
+  padding: 0.85rem 1.25rem;
+  border: 2px solid #e8eef5;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.search-input-wrap input:focus {
+  outline: none;
+  border-color: var(--blue-strong);
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
+}
+
+.search-input-wrap button {
+  padding: 0.85rem 2rem;
+  background: var(--blue-strong);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-input-wrap button:hover {
+  background: var(--blue-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(25, 118, 210, 0.3);
+}
+
+/* Suggestions */
+.suggestions {
+  list-style: none;
+  max-height: 400px;
+  overflow-y: auto;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  padding: 0;
+}
+
+.suggestions li {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.suggestions li:hover {
+  background: #f5f7fa;
+  padding-left: 1.5rem;
+}
+
+/* Quick Filters/Chips */
+.quick-filters {
+  margin-top: 1.5rem;
+}
+
+.filters-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.chips-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.chip {
+  padding: 0.6rem 1.25rem;
+  background: var(--blue-main);
+  color: var(--blue-dark);
+  border: 2px solid var(--blue-main);
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.chip:hover {
+  background: var(--blue-strong);
+  color: white;
+  border-color: var(--blue-strong);
+  transform: scale(1.05);
+}
+
 /* Main Content */
 main {
   max-width: var(--max-width);
@@ -192,49 +327,6 @@ main {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
-.search-input-wrap {
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.search-input-wrap input {
-  flex: 1;
-  padding: 0.75rem 1.25rem;
-  border: 2px solid #e8eef5;
-  border-radius: 12px;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-}
-
-.search-input-wrap input:focus {
-  outline: none;
-  border-color: var(--blue-strong);
-  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
-}
-
-/* Suggestions */
-.suggestions {
-  list-style: none;
-  max-height: 400px;
-  overflow-y: auto;
-  border-radius: 12px;
-  background: white;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-}
-
-.suggestions li {
-  padding: 1rem 1.25rem;
-  border-bottom: 1px solid #f0f0f0;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.suggestions li:hover {
-  background: #f5f7fa;
-  padding-left: 1.5rem;
-}
-
 /* Filters and Chips */
 .filters {
   display: grid;
@@ -251,24 +343,6 @@ main {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
-}
-
-.chip {
-  padding: 0.6rem 1.25rem;
-  background: var(--blue-main);
-  color: var(--blue-dark);
-  border: 2px solid var(--blue-main);
-  border-radius: 20px;
-  cursor: pointer;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.chip:hover {
-  background: var(--blue-strong);
-  color: white;
-  border-color: var(--blue-strong);
-  transform: scale(1.05);
 }
 
 /* Footer */
@@ -357,6 +431,36 @@ li {
   header nav {
     gap: 1rem;
     flex-direction: column;
+  }
+
+  .search-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .search-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .search-box-main {
+    padding: 1rem;
+  }
+
+  .search-input-wrap {
+    flex-direction: column;
+  }
+
+  .search-input-wrap input,
+  .search-input-wrap button {
+    width: 100%;
+  }
+
+  .chips-row {
+    gap: 0.5rem;
+  }
+
+  .chip {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
   }
 
   .hero {
