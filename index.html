@@ -32,93 +32,64 @@
     </div>
   </header>
 
+  <!-- Search/Shop Section at the top -->
+  <section id="catalogo" class="search-section" aria-labelledby="titulo-busca">
+    <div class="search-container">
+      <h1 id="titulo-busca">Procure uma Vacina</h1>
+      <p class="search-subtitle">Busque pelo nome da vacina ou pelo nome da doença</p>
+      
+      <div class="search-box-main">
+        <div class="search-input-wrap">
+          <input
+            id="campo-busca"
+            type="search"
+            name="q"
+            placeholder="Ex.: dengue, gripe, HPV, COVID-19…"
+            autocomplete="off"
+            role="combobox"
+            aria-autocomplete="list"
+            aria-expanded="false"
+            aria-controls="lista-sugestoes"
+            aria-haspopup="listbox"
+            aria-label="Campo de busca de vacinas"
+          />
+          <button id="botao-busca" class="btn btn-primary" type="button" aria-label="Buscar vacina">Buscar</button>
+        </div>
+        <ul
+          id="lista-sugestoes"
+          role="listbox"
+          aria-label="Sugestões de vacinas"
+          class="suggestions"
+        ></ul>
+        <p id="status-busca" class="sr-only" aria-live="polite" aria-atomic="true"></p>
+      </div>
+
+      <div class="quick-filters">
+        <p class="filters-title">Categorias rápidas</p>
+        <div class="chips-row">
+          <button class="chip" type="button">Dengue</button>
+          <button class="chip" type="button">Gripe</button>
+          <button class="chip" type="button">HPV</button>
+          <button class="chip" type="button">Sarampo</button>
+          <button class="chip" type="button">COVID-19</button>
+          <button class="chip" type="button">Febre Amarela</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Main content area -->
   <main id="conteudo-principal" role="main">
     <!-- Hero section -->
     <section id="home" class="hero" aria-labelledby="titulo-home">
-      <h1 id="titulo-home">Vaclog: catálogo claro e confiável sobre vacinas</h1>
+      <h2 id="titulo-home">Vaclog: catálogo claro e confiável sobre vacinas</h2>
       <p>Ajuda você e sua família a entender, com calma, por que as vacinas existem, quais são seus benefícios e quais riscos podem trazer, sem alarmismo nem promessas exageradas.</p>
       <p class="text-muted">Informação em linguagem simples, para adolescentes, adultos e crianças alfabetizadas.</p>
       <div class="hero-actions">
-        <button class="btn btn-primary" type="button" onclick="document.getElementById('catalogo').scrollIntoView({behavior:'smooth'})">
-          Explorar catálogo de vacinas
-        </button>
-        <button class="btn btn-secondary" type="button" onclick="document.getElementById('como-funcionam').scrollIntoView({behavior:'smooth'})">
-          Como funcionam as vacinas?
-        </button>
+        <button class="btn btn-primary" type="button" onclick="document.getElementById('catalogo').scrollIntoView({behavior:'smooth'})">Explorar catálogo</button>
+        <button class="btn btn-secondary" type="button" onclick="document.getElementById('como-funcionam').scrollIntoView({behavior:'smooth'})">Como funcionam as vacinas?</button>
       </div>
       <p class="hero-micro">Sem julgamento, sem pressão. Só informação clara para você decidir junto com profissionais de saúde.</p>
-    </section>
-
-    <!-- Search section -->
-    <section id="catalogo" class="section" aria-labelledby="sec-busca">
-      <h2 id="sec-busca">Procure uma vacina</h2>
-      <p>Busque pelo nome da vacina ou pelo nome da doença.</p>
-      <div class="card search-grid">
-        <div class="search-box">
-          <label for="campo-busca">Buscar vacina ou doença</label>
-          <div class="search-input-wrap">
-            <input
-              id="campo-busca"
-              type="search"
-              name="q"
-              placeholder="Ex.: dengue, gripe, HPV…"
-              autocomplete="off"
-              role="combobox"
-              aria-autocomplete="list"
-              aria-expanded="false"
-              aria-controls="lista-sugestoes"
-              aria-haspopup="listbox"
-              aria-label="Campo de busca de vacinas"
-            />
-            <button id="botao-busca" class="btn btn-primary" type="button" aria-label="Buscar vacina">Buscar</button>
-          </div>
-          <ul
-            id="lista-sugestoes"
-            role="listbox"
-            aria-label="Sugestões de vacinas"
-            class="suggestions"
-          ></ul>
-          <p id="status-busca" class="sr-only" aria-live="polite" aria-atomic="true"></p>
-          <p class="search-help">
-            Não achou o que procura? Tente buscar pelo nome da doença ou converse com um profissional de saúde.
-          </p>
-        </div>
-
-        <div>
-          <p class="filters-title">Categorias rápidas</p>
-          <div class="filters" aria-label="Filtros de categoria">
-            <div>
-              <label for="filter-disease">Por doença</label>
-              <div class="chips" id="filter-disease">
-                <button class="chip" type="button">Dengue</button>
-                <button class="chip" type="button">Gripe</button>
-                <button class="chip" type="button">HPV</button>
-                <button class="chip" type="button">Sarampo</button>
-              </div>
-            </div>
-            <div>
-              <label for="filter-age">Por faixa etária</label>
-              <div class="chips" id="filter-age">
-                <button class="chip" type="button">Bebês</button>
-                <button class="chip" type="button">Crianças</button>
-                <button class="chip" type="button">Adolescentes</button>
-                <button class="chip" type="button">Adultos</button>
-                <button class="chip" type="button">Idosos</button>
-              </div>
-            </div>
-            <div>
-              <label for="filter-situation">Por situação</label>
-              <div class="chips" id="filter-situation">
-                <button class="chip" type="button">Rotina</button>
-                <button class="chip" type="button">Viagem</button>
-                <button class="chip" type="button">Surtos</button>
-                <button class="chip" type="button">Grupos especiais</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- How to use section -->
