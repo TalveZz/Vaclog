@@ -5,184 +5,130 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Vaclog: catálogo claro e acessível de vacinas para famílias, com linguagem simples e foco em benefícios e riscos." />
   <meta name="theme-color" content="#2563eb" />
-  <title>Vaclog – Catálogo de Vacinas Acessível</title>
+  <title>Vaclog - Catálogo de Vacinas Acessível</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- Header with semantic HTML5 -->
-  <header role="banner">
-    <div class="header-inner">
-      <div class="logo" aria-label="Vaclog, catálogo de vacinas">
-        Vaclog
-      </div>
-      <nav aria-label="Navegação principal">
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#catalogo">Catálogo de vacinas</a></li>
-          <li><a href="#como-funcionam">Como funcionam</a></li>
-          <li><a href="#linha-do-tempo">Linha do tempo</a></li>
-          <li><a href="#sobre">Sobre o Vaclog</a></li>
-          <li><a href="#acessibilidade">Acessibilidade</a></li>
-          <li><a href="#ajuda">Ajuda/Contato</a></li>
-        </ul>
-      </nav>
+<!-- Header with semantic HTML5 -->
+<header role="banner">
+  <div class="header-inner">
+    <div class="logo" aria-label="Vaclog, catálogo de vacinas">
+      Vaclog
     </div>
-  </header>
+    
+    <!-- Hamburger Menu Button -->
+    <button id="menu-toggle" class="hamburger" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="nav-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
-  <!-- Search/Shop Section at the top -->
-  <section id="catalogo" class="search-section" aria-labelledby="titulo-busca">
-    <div class="search-container">
-      <h1 id="titulo-busca">Procure uma Vacina</h1>
-      <p class="search-subtitle">Busque pelo nome da vacina ou pelo nome da doença</p>
-      
-      <div class="search-box-main">
-        <div class="search-input-wrap">
-          <input
-            id="campo-busca"
-            type="search"
-            name="q"
-            placeholder="Ex.: dengue, gripe, HPV, COVID-19…"
-            autocomplete="off"
-            role="combobox"
-            aria-autocomplete="list"
-            aria-expanded="false"
-            aria-controls="lista-sugestoes"
-            aria-haspopup="listbox"
-            aria-label="Campo de busca de vacinas"
-          />
-          <button id="botao-busca" class="btn btn-primary" type="button" aria-label="Buscar vacina">Buscar</button>
-        </div>
-        <ul
-          id="lista-sugestoes"
-          role="listbox"
-          aria-label="Sugestões de vacinas"
-          class="suggestions"
-        ></ul>
-        <p id="status-busca" class="sr-only" aria-live="polite" aria-atomic="true"></p>
-      </div>
+    <nav aria-label="Navegação principal" id="nav-menu" class="nav-menu">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#catalogo">Catálogo de vacinas</a></li>
+        <li><a href="#como-funcionam">Como funcionam</a></li>
+        <li><a href="#linha-do-tempo">Linha do tempo</a></li>
+        <li><a href="#sobre">Sobre o Vaclog</a></li>
+        <li><a href="#acessibilidade">Acessibilidade</a></li>
+        <li><a href="#ajuda">Ajuda/Contato</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-      <div class="quick-filters">
-        <p class="filters-title">Categorias rápidas</p>
-        <div class="chips-row">
-          <button class="chip" type="button">Dengue</button>
-          <button class="chip" type="button">Gripe</button>
-          <button class="chip" type="button">HPV</button>
-          <button class="chip" type="button">Sarampo</button>
-          <button class="chip" type="button">COVID-19</button>
-          <button class="chip" type="button">Febre Amarela</button>
-        </div>
+<!-- Search Section at Top -->
+<section id="catalogo" class="search-section">
+  <div class="search-container">
+    <h1>Procure uma Vacina</h1>
+    <p class="search-subtitle">Busque pelo nome da vacina ou pelo nome da doença</p>
+    
+    <div class="search-box-main">
+      <div class="search-input-wrap">
+        <input type="text" id="search-input" placeholder="Ex. dengue, gripe, HPV, COVID-19..." aria-label="Buscar vacina ou doença">
+        <button id="search-btn" class="btn-primary">Buscar</button>
       </div>
+      <ul id="suggestions" class="suggestions" role="listbox"></ul>
+    </div>
+
+    <div class="quick-filters">
+      <label class="filters-label">Categorias rápidas</label>
+      <div class="chips-row">
+        <button class="chip" data-disease="dengue">Dengue</button>
+        <button class="chip" data-disease="gripe">Gripe</button>
+        <button class="chip" data-disease="hpv">HPV</button>
+        <button class="chip" data-disease="sarampo">Sarampo</button>
+        <button class="chip" data-disease="covid">COVID-19</button>
+        <button class="chip" data-disease="febre-amarela">Febre Amarela</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Vaclog: catálogo claro e confiável sobre vacinas</h1>
+    <p>Ajuda você e sua família a entender, com calma, por que as vacinas existem, quais são seus benefícios e quais riscos podem trazer, sem alarmismo nem promessas exageradas.</p>
+    <p class="hero-micro">Informação em linguagem simples, para adolescentes, adultos e crianças alfabetizadas.</p>
+  </section>
+
+  <!-- Info Section -->
+  <section id="sec-acessibilidade" class="section" aria-labelledby="sec-acessibilidade">
+    <h2 id="sec-acessibilidade">Acessibilidade</h2>
+    <div class="card">
+      <p>O Vaclog foi pensado para ser acessível, com bom contraste entre texto e fundo, fontes legíveis e organização clara das informações.</p>
+      <p>Ícones são sempre acompanhados de texto, os elementos seguem landmarks como header, nav, main e footer, e imagens importantes recebem texto alternativo para leitores de tela.</p>
     </div>
   </section>
 
-  <!-- Main content area -->
-  <main id="conteudo-principal" role="main">
-    <!-- Hero section -->
-    <section id="home" class="hero" aria-labelledby="titulo-home">
-      <h2 id="titulo-home">Vaclog: catálogo claro e confiável sobre vacinas</h2>
-      <p>Ajuda você e sua família a entender, com calma, por que as vacinas existem, quais são seus benefícios e quais riscos podem trazer, sem alarmismo nem promessas exageradas.</p>
-      <p class="text-muted">Informação em linguagem simples, para adolescentes, adultos e crianças alfabetizadas.</p>
-      <div class="hero-actions">
-        <button class="btn btn-primary" type="button" onclick="document.getElementById('catalogo').scrollIntoView({behavior:'smooth'})">Explorar catálogo</button>
-        <button class="btn btn-secondary" type="button" onclick="document.getElementById('como-funcionam').scrollIntoView({behavior:'smooth'})">Como funcionam as vacinas?</button>
-      </div>
-      <p class="hero-micro">Sem julgamento, sem pressão. Só informação clara para você decidir junto com profissionais de saúde.</p>
-    </section>
-
-    <!-- How to use section -->
-    <section class="section" aria-labelledby="sec-como-usar">
-      <h2 id="sec-como-usar">Como usar o Vaclog</h2>
-      <div class="card">
-        <ol>
-          <li>Use a busca ou as categorias para encontrar a vacina ou doença que você quer entender.</li>
-          <li>Na página da vacina, leia primeiro o bloco "Em poucas palavras".</li>
-          <li>Use os botões "Ver versão resumida" ou "Ver versão detalhada" para escolher o nível de explicação.</li>
-          <li>Anote suas dúvidas e converse com um profissional de saúde antes de decidir.</li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- What is a vaccine section -->
-    <section class="section" aria-labelledby="sec-o-que-e">
-      <h2 id="sec-o-que-e">O que é uma vacina?</h2>
-      <div class="card">
-        <p>Vacinas são produtos que treinam o sistema de defesa do corpo (sistema imunológico) para reconhecer um vírus ou bactéria e reagir mais rápido, sem causar a doença como na infecção natural.</p>
-        <p>Elas ajudam a diminuir o risco de ficar doente, de ter formas graves e de transmitir para outras pessoas, especialmente em lugares com muitos casos daquela doença.</p>
-      </div>
-    </section>
-
-    <!-- Myths and fears section -->
-    <section class="section" aria-labelledby="sec-boatos">
-      <h2 id="sec-boatos">Por que existem boatos e medos?</h2>
-      <div class="card">
-        <p>Desde o começo do uso de vacinas, muitas pessoas ficaram com medo por não entender como elas funcionam ou por terem vivido campanhas mal explicadas ou muito autoritárias, o que gerou desconfiança.</p>
-        <p>Hoje, mensagens falsas circulam rápido na internet, misturando verdades e boatos. O Vaclog existe para explicar, com calma, o que se sabe sobre benefícios e riscos.</p>
-      </div>
-    </section>
-
-    <!-- Important notice section -->
-    <section class="section" aria-labelledby="sec-aviso">
-      <h2 id="sec-aviso">Importante</h2>
-      <div class="card">
-        <p><strong>O Vaclog é um site informativo.</strong> Ele não substitui consulta médica.</p>
-        <p>Use estas informações para entender melhor o assunto e conversar com profissionais de saúde antes de tomar decisões.</p>
-      </div>
-    </section>
-
-    <!-- How vaccines work section -->
-    <section id="como-funcionam" class="section" aria-labelledby="sec-funcionamento">
-      <h2 id="sec-funcionamento">Como funcionam as vacinas?</h2>
-      <div class="card">
-        <p>O sistema imunológico é a defesa natural do corpo. Ele tenta identificar o que é perigoso, como vírus e bactérias, e impedir que esses invasores causem doença.</p>
-        <p>A vacina mostra ao corpo uma versão enfraquecida, inativada ou apenas pedaços do vírus/bactéria, o suficiente para o sistema de defesa aprender a reconhecer.</p>
-      </div>
-    </section>
-
-    <!-- Timeline section -->
-    <section id="linha-do-tempo" class="section" aria-labelledby="sec-timeline">
-      <h2 id="sec-timeline">Linha do tempo das vacinas no Brasil</h2>
-      <div class="card">
-        <p>No começo do século XX, o Brasil passou por campanhas de vacinação com pouca explicação e muita pressão, o que levou a episódios de resistência, como a chamada Revolta da Vacina.</p>
-        <p>Hoje existem calendários de vacinação e campanhas que ajudaram a reduzir ou controlar várias doenças, apesar de a desinformação ainda ser um desafio.</p>
-      </div>
-    </section>
-
-    <!-- Accessibility section -->
-    <section id="acessibilidade" class="section" aria-labelledby="sec-acessibilidade">
-      <h2 id="sec-acessibilidade">Acessibilidade</h2>
-      <div class="card">
-        <p>O Vaclog foi pensado para ser acessível, com bom contraste entre texto e fundo, fontes legíveis e organização clara das informações.</p>
-        <p>Ícones são sempre acompanhados de texto, os elementos seguem landmarks como header, nav, main e footer, e imagens importantes recebem texto alternativo para leitores de tela.</p>
-      </div>
-    </section>
-
-    <!-- About section -->
-    <section id="sobre" class="section" aria-labelledby="sec-sobre">
-      <h2 id="sec-sobre">Sobre o Vaclog</h2>
-      <div class="card">
-        <p>O Vaclog é um catálogo educativo de vacinas com linguagem simples, criado para ajudar pessoas leigas a entender benefícios e riscos de forma calma e transparente.</p>
-      </div>
-    </section>
-
-    <!-- Help/Contact section -->
-    <section id="ajuda" class="section" aria-labelledby="sec-ajuda">
-      <h2 id="sec-ajuda">Ajuda / Contato</h2>
-      <div class="card">
-        <p>Teve dificuldade de entender alguma parte ou acessibilidade que pode melhorar? Envie seu feedback para a equipe do Vaclog.</p>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer role="contentinfo">
-    <div class="footer-inner">
-      <p><strong>Aviso:</strong> o Vaclog é um site informativo e não substitui consulta médica.</p>
-      <p>Para decisões sobre sua saúde e de sua família, sempre converse com profissionais de saúde de confiança.</p>
-      <p>As informações são baseadas em diretrizes e materiais de instituições de saúde reconhecidas, revisadas e atualizadas periodicamente.</p>
+  <!-- About Section -->
+  <section id="sobre" class="section" aria-labelledby="sec-sobre">
+    <h2 id="sec-sobre">Sobre o Vaclog</h2>
+    <div class="card">
+      <p>O Vaclog é um catálogo educativo de vacinas com linguagem simples, criado para ajudar pessoas leigas a entender benefícios e riscos de forma calma e transparente.</p>
     </div>
-  </footer>
+  </section>
 
-  <script src="search.js"></script>
+  <!-- Help/Contact Section -->
+  <section id="ajuda" class="section" aria-labelledby="sec-ajuda">
+    <h2 id="sec-ajuda">Ajuda / Contato</h2>
+    <div class="card">
+      <p>Teve dificuldade de entender alguma parte ou acessibilidade que pode melhorar? Envie seu feedback para a equipe do Vaclog.</p>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <p><strong>Aviso:</strong> o Vaclog é um site informativo e não substitui consulta médica.</p>
+    <p>Para decisões sobre sua saúde e de sua família, sempre converse com profissionais de saúde de confiança.</p>
+    <p>As informações são baseadas em diretrizes e materiais de instituições de saúde reconhecidas, revisadas e atualizadas periodicamente.</p>
+  </div>
+</footer>
+
+<script src="search.js"></ script>
+<script>
+  // Menu Toggle
+  const menuToggle = document.getElementById('menu-toggle');
+  const navMenu = document.getElementById('nav-menu');
+  
+  menuToggle.addEventListener('click', function() {
+    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', !isExpanded);
+    navMenu.classList.toggle('active');
+  });
+  
+  // Close menu when a link is clicked
+  const navLinks = navMenu.querySelectorAll('a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      menuToggle.setAttribute('aria-expanded', 'false');
+      navMenu.classList.remove('active');
+    });
+  });
+</script>
 </body>
 </html>
