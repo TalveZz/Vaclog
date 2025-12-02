@@ -598,3 +598,12 @@ li {
     align-items: center;
   }
 }
+
+
+.search-help {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 0.75rem;
+  padding: 0.5rem 0;
+  min-height: 1.2rem;
+}
