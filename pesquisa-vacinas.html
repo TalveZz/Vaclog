@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pesquisa de vacinas e suas informacoes historicas">
+  <meta name="theme-color" content="#0066cc">
+  <title>Pesquisa de Vacinas - Catalogo Historico</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .search-container {
+      max-width: 600px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .search-form {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .search-form input {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      border: 2px solid #0066cc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .search-form input:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(0,102,204,0.1);
+    }
+
+    .search-form button {
+      padding: 0.75rem 1.5rem;
+      background: #0066cc;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .search-form button:hover {
+      background: #0052a3;
+    }
+
+    .search-form button:focus {
+      outline: 2px solid #0066cc;
+      outline-offset: 2px;
+    }
+
+    .vaccines-list {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .vaccine-item {
+      padding: 1rem;
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .vaccine-item:hover {
+      border-color: #0066cc;
+      box-shadow: 0 4px 12px rgba(0,102,204,0.1);
+      transform: translateY(-2px);
+    }
+
+    .vaccine-item:focus-within {
+      outline: 2px solid #0066cc;
+      outline-offset: 2px;
+    }
+
+    .vaccine-name {
+      font-weight: bold;
+      color: #1f2937;
+      margin-bottom: 0.5rem;
+    }
+
+    .vaccine-description {
+      color: #6b7280;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header role="banner">
+    <div class="header-inner">
+      <div class="logo" aria-label="Pesquisa de Vacinas">Pesquisa de Vacinas</div>
+      <nav aria-label="Navegacao principal">
+        <a href="index.html" aria-current="false">Inicio</a>
+      </nav>
+    </div>
+  </header>
+
+  <main role="main" aria-labelledby="page-title">
+    <section class="search-container" aria-label="Secao de pesquisa de vacinas">
+      <h1 id="page-title">Pesquisa de Vacinas Historicas</h1>
+      
+      <form class="search-form" role="search" onsubmit="handleSearch(event)" aria-label="Formulario de pesquisa de vacinas">
+        <input 
+          type="text" 
+          id="vaccine-search" 
+          placeholder="Digite o nome da vacina..." 
+          aria-label="Campo de pesquisa: Digite o nome da vacina"
+          aria-describedby="search-help"
+        >
+        <button type="submit" aria-label="Botao de pesquisa">Pesquisar</button>
+      </form>
+      <p id="search-help" class="sr-only">Digite o nome da vacina para buscar informacoes</p>
+
+      <div class="vaccines-list" id="results" role="region" aria-live="polite" aria-labelledby="results-label">
+        <p id="results-label" class="sr-only">Resultados da pesquisa</p>
+        <!-- Resultados serao inseridos aqui -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal de Detalhes da Vacina -->
+  <div id="vaccine-modal" role="dialog" aria-hidden="true" aria-labelledby="modal-title" aria-describedby="modal-content">
+    <div class="modal-overlay" onclick="closeModal()" aria-label="Fechar modal"></div>
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()" aria-label="Fechar dialog">×</button>
+      <h2 id="modal-title"></h2>
+      <div id="modal-content"></div>
+      <button class="modal-btn" onclick="closeModal()" aria-label="Fechar dialogo">Fechar</button>
+    </div>
+  </div>
+
+  <style>
+    #vaccine-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #vaccine-modal[aria-hidden="false"] {
+      display: flex;
+    }
+
+    .modal-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .modal-content {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      max-width: 500px;
+      width: 90%;
+      max-height: 80vh;
+      overflow-y: auto;
+      position: relative;
+      z-index: 10;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 2.5rem;
+      height: 2.5rem;
+      border: none;
+      background: transparent;
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+    }
+
+    .modal-close:hover,
+    .modal-close:focus {
+      background: #f3f4f6;
+      outline: 2px solid #0066cc;
+      outline-offset: 2px;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+  </style>
+
+  <footer role="contentinfo">
+    <p>&copy; 2024 Portal de Pesquisa de Vacinas - Analise Historica</p>
+  </footer>
+
+  <script>
+    // Base de dados de vacinas com informacoes historicas (1904)
+    const vaccinesDatabase = [
+      {
+        name: "Vacina Contra Varol",
+        year: "1904",
+        description: "A vacina contra varol (varicela) era obrigatoria no Rio de Janeiro.",
+        details: "Durante a Revolta da Vacina em 1904, a vacinacao obrigatoria contra varol foi um dos principais pontos de conflito. A populacao desconfiava dos metodos de administracao e falta de informacao clara sobre os efeitos colaterais.",
+        concerns: "Falta de consentimento informado, metodos invasivos, desconfianca no governo."
+      },
+      {
+        name: "Vacina Contra Febre Amarela",
+        year: "1901-1904",
+        description: "A campanha de vacinacao contra febre amarela foi iniciada no Rio de Janeiro.",
+        details: "A epidemia de febre amarela motivou a campanha de vacinacao forcada. A falta de transparencia sobre a origem da vacina e seus efeitos aumentou a desconfianca popular.",
+        concerns: "Informacoes contradictorias, metodos de administracao forcados, falta de escolha individual."
+      },
+      {
+        name: "Vacina Contra Tuberculose",
+        year: "1900s",
+        description: "Pesquisas sobre vacinacao contra tuberculose durante o periodo.",
+        details: "A tuberculose era uma doenca importante na epoca. A populacao temia as novas vacinas por desconhecer como funcionavam.",
+        concerns: "Medo do desconhecido, falta de educacao sanitaria adequada."
+      },
+      {
+        name: "Vacinacao em Massa",
+        year: "1904",
+        description: "As operacoes de vacinacao em massa no Rio de Janeiro.",
+        details: "A prefeitura do Rio de Janeiro, sob pressao federal para combater epidemias, implementou uma campanha de vacinacao forcada. Os vacinadores visitavam casas e ruas forcando pessoas a se vacinarem.",
+        concerns: "Violacao de domicilio, falta de consentimento, metodos coercitivos."
+      },
+      {
+        name: "Vacinacao Infantil Obrigatoria",
+        year: "1904",
+        description: "Decreto exigindo vacinacao de criancas.",
+        details: "O governo federal decretou que todas as criancas deveriam ser vacinadas, sob pena de multa aos pais. Isto foi visto como uma invasao dos direitos familiares.",
+        concerns: "Autoridade estatal excessiva, puniao aos pais, falta de liberdade de escolha."
+      }
+    ];
+
+    function handleSearch(event) {
+      event.preventDefault();
+      const searchTerm = document.getElementById('vaccine-search').value.toLowerCase();
+      const resultsContainer = document.getElementById('results');
+      resultsContainer.innerHTML = '';
+
+      if (!searchTerm.trim()) {
+        resultsContainer.innerHTML = '<p>Digite um termo de busca para encontrar vacinas.</p>';
+        return;
+      }
+
+      const filtered = vaccinesDatabase.filter(vaccine =>
+        vaccine.name.toLowerCase().includes(searchTerm) ||
+        vaccine.description.toLowerCase().includes(searchTerm)
+      );
+
+      if (filtered.length === 0) {
+        resultsContainer.innerHTML = '<p>Nenhuma vacina encontrada. Tente outro termo de busca.</p>';
+        return;
+      }
+
+      filtered.forEach(vaccine => {
+        const div = document.createElement('div');
+        div.className = 'vaccine-item';
+        div.role = 'button';
+        div.tabindex = '0';
+        div.onclick = () => openModal(vaccine);
+        div.onkeypress = (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openModal(vaccine);
+          }
+        };
+        div.innerHTML = `
+          <div class="vaccine-name">${vaccine.name}</div>
+          <div class="vaccine-description">${vaccine.description}</div>
+          <p style="font-size: 0.85rem; color: #999; margin-top: 0.5rem;">Clique para mais detalhes</p>
+        `;
+        resultsContainer.appendChild(div);
+      });
+    }
+
+    function openModal(vaccine) {
+      const modal = document.getElementById('vaccine-modal');
+      document.getElementById('modal-title').textContent = vaccine.name;
+      document.getElementById('modal-content').innerHTML = `
+        <p><strong>Ano:</strong> ${vaccine.year}</p>
+        <p><strong>Descricao:</strong> ${vaccine.description}</p>
+        <p><strong>Detalhes:</strong> ${vaccine.details}</p>
+        <p><strong>Preocupacoes da populacao:</strong> ${vaccine.concerns}</p>
+      `;
+      modal.setAttribute('aria-hidden', 'false');
+      document.querySelector('.modal-close').focus();
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('vaccine-modal');
+      modal.setAttribute('aria-hidden', 'true');
+    }
+
+    // Carrega todas as vacinas ao abrir a pagina
+    window.addEventListener('load', () => {
+      handleSearch({ preventDefault: () => {} });
+      document.getElementById('vaccine-search').value = '';
+    });
+  </script>
+</body>
+</html>
