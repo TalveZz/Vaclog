@@ -211,9 +211,9 @@
         // Close modal on Escape
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
-                document.getElementById('welcomeModal').style.display = 'none';
-                document.getElementById('suggestionsModal').style.display = 'none';
-                document.getElementById('successModal').style.display = 'none';
+                document.getElementById('welcomeModal').classList.remove('show');
+                document.getElementById('suggestionsModal').classList.remove('show');
+                document.getElementById('successModal').classList.remove('show');
             }
         });
 
@@ -243,7 +243,7 @@
             console.log('Sugestão:', { name, subject, message });
             
             // Show success modal
-            document.getElementById('suggestionsModal').style.display = 'none';
+            document.getElementById('suggestionsModal').classList.remove('show');
             document.getElementById('successModal').style.display = 'block';
             
             // Reset form
